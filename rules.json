@@ -2,6 +2,7 @@
   "rules": {
     "python": "python.md",
     "terraform": "terraform.md",
+    "react": "react.md",
     "ruby": "ruby.md",
     "aws": "aws.md"
   }
