@@ -1,3 +1,5 @@
+# Python
+
 Use threading for parallel operations when it makes sense
 Always use argparser so we have a consistent -h for help
 Always use python-dotenv to allow for overrides
