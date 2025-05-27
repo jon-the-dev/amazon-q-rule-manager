@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "python": "python.md",
+    "terraform": "terraform.md",
+    "ruby": "ruby.md",
+    "aws": "aws.md"
+  }
+}
