@@ -4,6 +4,7 @@
     "sls-framework": "sls-framework.md",
     "terraform": "terraform.md",
     "react": "react.md",
+    "runway": "runway.md",
     "ruby": "ruby.md",
     "aws": "aws.md"
   }
