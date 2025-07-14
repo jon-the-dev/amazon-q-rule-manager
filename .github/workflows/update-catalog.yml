@@ -1,0 +1,53 @@
+name: Update Rules Catalog
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'rules/*.md'
+      - 'update_json.py'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'rules/*.md'
+      - 'update_json.py'
+
+jobs:
+  update-catalog:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Update rules catalog
+      run: python update_json.py
+    
+    - name: Check for changes
+      id: verify-changed-files
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit updated catalog
+      if: steps.verify-changed-files.outputs.changed == 'true' && github.event_name == 'push'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add amazon_q_rule_manager/data/rules_catalog.json
+        git commit -m "Auto-update rules catalog from rule changes"
+        git push
+    
+    - name: Upload catalog artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: rules-catalog
+        path: amazon_q_rule_manager/data/rules_catalog.json

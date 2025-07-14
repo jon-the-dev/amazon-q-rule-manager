@@ -1,0 +1,208 @@
+.rule-card {
+  background: rgba(17, 17, 17, 0.8);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rule-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00ff41, #00cc33);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.rule-card:hover::before {
+  opacity: 1;
+}
+
+.rule-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rule-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.rule-version {
+  font-size: 0.75rem;
+  color: #888;
+  background: rgba(0, 255, 65, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 255, 65, 0.2);
+}
+
+.rule-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rule-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.rule-description {
+  color: #cccccc;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.rule-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.rule-tag {
+  font-size: 0.7rem;
+  background: rgba(0, 255, 65, 0.1);
+  color: #00ff41;
+  padding: 3px 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 65, 0.2);
+}
+
+.rule-tag-more {
+  font-size: 0.7rem;
+  color: #888;
+  padding: 3px 8px;
+}
+
+.rule-examples {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 3px solid #00ff41;
+}
+
+.rule-examples h4 {
+  font-size: 0.85rem;
+  color: #00ff41;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.rule-examples ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rule-examples li {
+  font-size: 0.8rem;
+  color: #cccccc;
+  margin-bottom: 4px;
+  position: relative;
+  padding-left: 12px;
+}
+
+.rule-examples li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #00ff41;
+}
+
+.rule-card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rule-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.rule-author {
+  color: #00ff41;
+}
+
+.rule-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.rule-actions .btn {
+  flex: 1;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+}
+
+.rule-dependencies {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+.dependency-info,
+.conflict-info {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.dependency-info:last-child,
+.conflict-info:last-child {
+  margin-bottom: 0;
+}
+
+.dependency-label {
+  color: #00ff41;
+  font-weight: 500;
+  min-width: 80px;
+}
+
+.conflict-label {
+  color: #ff4444;
+  font-weight: 500;
+  min-width: 80px;
+}
+
+.dependency-list,
+.conflict-list {
+  color: #cccccc;
+}
+
+@media (max-width: 768px) {
+  .rule-card {
+    padding: 20px;
+  }
+  
+  .rule-actions {
+    flex-direction: column;
+  }
+  
+  .rule-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
