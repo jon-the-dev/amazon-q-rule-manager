@@ -1,31 +1,74 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-07-14T15:40:34Z",
+  "last_updated": "2025-07-14T15:52:22Z",
   "rules": {
-    "runway": {
-      "name": "runway",
-      "title": "Runway Deployment Guidelines",
-      "description": "Guidelines for using Runway for infrastructure deployment",
-      "category": "aws",
+    "python": {
+      "name": "python",
+      "title": "Python Development Standards",
+      "description": "Standards for Python development including version requirements and coding practices",
+      "category": "python",
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
-        "runway",
-        "deployment",
-        "infrastructure",
-        "aws"
+        "python",
+        "development",
+        "standards",
+        "threading",
+        "argparse"
       ],
       "dependencies": [],
       "conflicts": [],
       "supported_languages": [
-        "yaml",
         "python"
       ],
-      "examples": [],
-      "documentation_url": "",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/runway.md"
+      "examples": [
+        "Use threading for parallel operations when it makes sense",
+        "Always use argparser so we have a consistent -h for help",
+        "Always use python-dotenv to allow for overrides"
+      ],
+      "documentation_url": "https://docs.python.org/3/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/python.md",
+      "min_python_version": "3.12"
+    },
+    "sls-framework": {
+      "name": "sls-framework",
+      "title": "Serverless Framework Guidelines",
+      "description": "Guidelines for Serverless Framework development and deployment",
+      "category": "serverless",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-07-14T16:13:51Z",
+      "tags": [
+        "serverless",
+        "aws",
+        "lambda",
+        "deployment"
+      ],
+      "dependencies": [
+        "aws"
+      ],
+      "conflicts": [],
+      "supported_languages": [
+        "yaml",
+        "json",
+        "terraform"
+      ],
+      "examples": [
+        "- Always assume there is a dev and prod envs",
+        "- Use config-dev.yml and config-prod.yml for variables",
+        "- Add alarms for common operational tasks but enable actions when a SNS_TOPIC is provided"
+      ],
+      "documentation_url": "https://www.serverless.com/framework/docs/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/sls-framework.md",
+      "aws_services": [
+        "Lambda",
+        "API Gateway",
+        "CloudFormation",
+        "S3"
+      ]
     },
     "terraform": {
       "name": "terraform",
@@ -35,7 +78,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "terraform",
         "infrastructure",
@@ -62,22 +105,19 @@
         "google"
       ]
     },
-    "aws": {
-      "name": "aws",
-      "title": "AWS Best Practices",
-      "description": "Guidelines for AWS resources including alarms, tagging, and default values",
+    "aws-sam": {
+      "name": "aws-sam",
+      "title": "Aws Sam",
+      "description": "Guidelines and best practices for aws-sam",
       "category": "aws",
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
+        "aws-sam",
         "aws",
-        "aws",
-        "cloud",
-        "monitoring",
-        "tagging",
-        "alarms"
+        "cloud"
       ],
       "dependencies": [],
       "conflicts": [],
@@ -109,7 +149,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "python",
         "development",
@@ -127,9 +167,8 @@
         "Always use argparser so we have a consistent -h for help",
         "Always use python-dotenv to allow for overrides"
       ],
-      "documentation_url": "https://docs.python.org/3/",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/python.md",
-      "min_python_version": "3.12"
+      "documentation_url": "",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/aws-sam.md"
     },
     "react": {
       "name": "react",
@@ -139,7 +178,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "react",
         "javascript",
@@ -171,7 +210,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "aws-sam",
         "aws",
@@ -200,7 +239,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "serverless",
         "aws",
@@ -238,7 +277,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "ruby",
         "development",
@@ -257,137 +296,31 @@
       ],
       "documentation_url": "https://ruby-doc.org/",
       "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/ruby.md"
-    },
-    "aws": {
-      "name": "aws",
-      "title": "AWS Best Practices",
-      "description": "Guidelines for AWS resources including alarms, tagging, and default values",
-      "category": "aws",
-      "version": "1.0.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:49:49Z",
-      "tags": [
-        "aws",
-        "aws",
-        "cloud",
-        "monitoring",
-        "tagging",
-        "alarms"
-      ],
-      "dependencies": [],
-      "conflicts": [],
-      "supported_languages": [
-        "yaml",
-        "json",
-        "terraform"
-      ],
-      "examples": [
-        "Ensure we add alarms for resources",
-        "Alarms will have no action by default but if a sns_topic is provided, actions are enabled",
-        "All resources should be tagged if possible"
-      ],
-      "documentation_url": "https://docs.aws.amazon.com/wellarchitected/",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/aws.md",
-      "aws_services": [
-        "CloudWatch",
-        "SNS",
-        "EC2",
-        "S3",
-        "Lambda"
-      ]
-    },
-    "runway": {
-      "name": "runway",
-      "title": "Runway Deployment Guidelines",
-      "description": "Guidelines for using Runway for infrastructure deployment",
-      "category": "aws",
-      "version": "1.0.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:49:49Z",
-      "tags": [
-        "runway",
-        "deployment",
-        "infrastructure",
-        "aws"
-      ],
-      "dependencies": [],
-      "conflicts": [],
-      "supported_languages": [
-        "yaml",
-        "python"
-      ],
-      "examples": [],
-      "documentation_url": "",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/runway.md"
     }
   },
   "categories": {
-    "aws": [
-      "runway",
-      "aws",
-      "aws-sam"
+    "python": [
+      "python"
+    ],
+    "serverless": [
+      "sls-framework"
     ],
     "terraform": [
       "terraform"
     ],
-    "python": [
-      "python"
+    "aws": [
+      "aws-sam",
+      "aws",
+      "runway"
     ],
     "javascript": [
       "react"
-    ],
-    "serverless": [
-      "sls-framework"
     ],
     "ruby": [
       "ruby"
     ]
   },
   "tags": {
-    "runway": [
-      "runway"
-    ],
-    "deployment": [
-      "runway",
-      "sls-framework"
-    ],
-    "infrastructure": [
-      "runway",
-      "terraform"
-    ],
-    "aws": [
-      "runway",
-      "aws",
-      "aws-sam",
-      "sls-framework"
-    ],
-    "terraform": [
-      "terraform"
-    ],
-    "iac": [
-      "terraform"
-    ],
-    "security": [
-      "terraform"
-    ],
-    "versioning": [
-      "terraform"
-    ],
-    "cloud": [
-      "aws",
-      "aws-sam"
-    ],
-    "monitoring": [
-      "aws"
-    ],
-    "tagging": [
-      "aws"
-    ],
-    "alarms": [
-      "aws"
-    ],
     "python": [
       "python"
     ],
@@ -404,6 +337,45 @@
     "argparse": [
       "python"
     ],
+    "serverless": [
+      "sls-framework"
+    ],
+    "aws": [
+      "sls-framework",
+      "aws-sam",
+      "aws",
+      "runway"
+    ],
+    "lambda": [
+      "sls-framework"
+    ],
+    "deployment": [
+      "sls-framework",
+      "runway"
+    ],
+    "terraform": [
+      "terraform"
+    ],
+    "infrastructure": [
+      "terraform",
+      "runway"
+    ],
+    "iac": [
+      "terraform"
+    ],
+    "security": [
+      "terraform"
+    ],
+    "versioning": [
+      "terraform"
+    ],
+    "aws-sam": [
+      "aws-sam"
+    ],
+    "cloud": [
+      "aws-sam",
+      "aws"
+    ],
     "react": [
       "react"
     ],
@@ -419,15 +391,6 @@
     "hooks": [
       "react"
     ],
-    "aws-sam": [
-      "aws-sam"
-    ],
-    "serverless": [
-      "sls-framework"
-    ],
-    "lambda": [
-      "sls-framework"
-    ],
     "ruby": [
       "ruby"
     ],
@@ -436,6 +399,18 @@
     ],
     "conventions": [
       "ruby"
+    ],
+    "monitoring": [
+      "aws"
+    ],
+    "tagging": [
+      "aws"
+    ],
+    "alarms": [
+      "aws"
+    ],
+    "runway": [
+      "runway"
     ]
   }
 }
