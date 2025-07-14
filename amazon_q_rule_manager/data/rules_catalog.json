@@ -1,72 +1,138 @@
 {
   "version": "2.0.0",
-  "last_updated": "2024-07-14T05:00:00Z",
+  "last_updated": "2025-07-14T15:36:07Z",
   "rules": {
-    "aws": {
-      "name": "aws",
-      "title": "AWS Best Practices",
-      "description": "Guidelines for AWS resources including alarms, tagging, and default values",
-      "category": "aws",
-      "version": "1.2.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2024-07-14T05:00:00Z",
-      "tags": ["aws", "cloud", "monitoring", "tagging", "alarms"],
-      "dependencies": [],
-      "conflicts": [],
-      "supported_languages": ["yaml", "json", "terraform"],
-      "aws_services": ["CloudWatch", "SNS", "EC2", "S3", "Lambda"],
-      "examples": [
-        "Add CloudWatch alarms to EC2 instances",
-        "Tag resources with standard tags",
-        "Configure SNS notifications for alarms"
-      ],
-      "documentation_url": "https://docs.aws.amazon.com/wellarchitected/",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/aws.md"
-    },
     "python": {
       "name": "python",
       "title": "Python Development Standards",
       "description": "Standards for Python development including version requirements and coding practices",
       "category": "python",
-      "version": "1.1.0",
+      "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2024-07-14T05:00:00Z",
-      "tags": ["python", "development", "standards", "threading", "argparse"],
+      "updated_at": "2025-07-14T15:36:07Z",
+      "tags": [
+        "python",
+        "development",
+        "standards",
+        "threading",
+        "argparse"
+      ],
       "dependencies": [],
       "conflicts": [],
-      "min_python_version": "3.12",
-      "supported_languages": ["python"],
+      "supported_languages": [
+        "python"
+      ],
       "examples": [
-        "Use threading for parallel operations",
-        "Always use argparse for CLI tools",
-        "Use python-dotenv for configuration"
+        "Use threading for parallel operations when it makes sense",
+        "Always use argparser so we have a consistent -h for help",
+        "Always use python-dotenv to allow for overrides"
       ],
       "documentation_url": "https://docs.python.org/3/",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/python.md"
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/python.md",
+      "min_python_version": "3.12"
+    },
+    "sls-framework": {
+      "name": "sls-framework",
+      "title": "Serverless Framework Guidelines",
+      "description": "Guidelines for Serverless Framework development and deployment",
+      "category": "serverless",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-07-14T15:36:07Z",
+      "tags": [
+        "serverless",
+        "aws",
+        "lambda",
+        "deployment"
+      ],
+      "dependencies": [
+        "aws"
+      ],
+      "conflicts": [],
+      "supported_languages": [
+        "yaml",
+        "json",
+        "terraform"
+      ],
+      "examples": [
+        "- Always assume there is a dev and prod envs",
+        "- Use config-dev.yml and config-prod.yml for variables",
+        "- Add alarms for common operational tasks but enable actions when a SNS_TOPIC is provided"
+      ],
+      "documentation_url": "https://www.serverless.com/framework/docs/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/sls-framework.md",
+      "aws_services": [
+        "Lambda",
+        "API Gateway",
+        "CloudFormation",
+        "S3"
+      ]
     },
     "terraform": {
       "name": "terraform",
       "title": "Terraform Best Practices",
       "description": "Best practices for Terraform including version requirements and security principles",
       "category": "terraform",
-      "version": "1.3.0",
+      "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2024-07-14T05:00:00Z",
-      "tags": ["terraform", "infrastructure", "iac", "security", "versioning"],
+      "updated_at": "2025-07-14T15:36:07Z",
+      "tags": [
+        "terraform",
+        "infrastructure",
+        "iac",
+        "security",
+        "versioning"
+      ],
       "dependencies": [],
       "conflicts": [],
-      "supported_languages": ["hcl", "terraform"],
-      "terraform_providers": ["aws", "azurerm", "google"],
+      "supported_languages": [
+        "hcl",
+        "terraform"
+      ],
       "examples": [
-        "Use semantic versioning for modules",
-        "Implement proper state management",
-        "Follow security best practices"
+        "Code for v1.9.0 of terraform unless explicitly asked",
+        "Always generate a README for the modules we create",
+        "Assume principles of least privilege Always"
       ],
       "documentation_url": "https://developer.hashicorp.com/terraform/docs",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/terraform.md"
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/terraform.md",
+      "terraform_providers": [
+        "aws",
+        "azurerm",
+        "google"
+      ]
+    },
+    "aws-sam": {
+      "name": "aws-sam",
+      "title": "Aws Sam",
+      "description": "Guidelines and best practices for aws-sam",
+      "category": "aws",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-07-14T15:36:07Z",
+      "tags": [
+        "aws-sam",
+        "aws",
+        "cloud"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": [
+        "yaml",
+        "json",
+        "terraform"
+      ],
+      "examples": [
+        "- Always use SAM template version 2010-09-09 with Transform: AWS::Serverless-2016-10-31",
+        "- Use parameter files for environment-specific configurations (dev, staging, prod)",
+        "- Define global configurations in the Globals section to avoid repetition"
+      ],
+      "documentation_url": "",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/aws-sam.md"
     },
     "react": {
       "name": "react",
@@ -76,15 +142,26 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2024-07-14T05:00:00Z",
-      "tags": ["react", "javascript", "frontend", "components", "hooks"],
+      "updated_at": "2025-07-14T15:36:07Z",
+      "tags": [
+        "react",
+        "javascript",
+        "frontend",
+        "components",
+        "hooks"
+      ],
       "dependencies": [],
       "conflicts": [],
-      "supported_languages": ["javascript", "typescript", "jsx", "tsx"],
+      "supported_languages": [
+        "javascript",
+        "typescript",
+        "jsx",
+        "tsx"
+      ],
       "examples": [
-        "Use functional components with hooks",
-        "Implement proper prop validation",
-        "Follow component naming conventions"
+        "You are a Senior Front-End Developer and an Expert in ReactJS, NextJS, JavaScript, TypeScript, HTML, CSS and modern UI/UX frameworks (e.g., TailwindCSS). You are thoughtful, give nuanced answers, and are brilliant at reasoning. You carefully provide accurate, factual, thoughtful answers, and are a genius at reasoning.",
+        "- Follow the user\u2019s requirements carefully & to the letter.",
+        "- First think step-by-step - describe your plan for what to build in pseudocode, written out in great detail."
       ],
       "documentation_url": "https://react.dev/",
       "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/react.md"
@@ -97,76 +174,204 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2024-07-14T05:00:00Z",
-      "tags": ["ruby", "development", "style", "conventions"],
+      "updated_at": "2025-07-14T15:36:07Z",
+      "tags": [
+        "ruby",
+        "development",
+        "style",
+        "conventions"
+      ],
       "dependencies": [],
       "conflicts": [],
-      "supported_languages": ["ruby"],
+      "supported_languages": [
+        "ruby"
+      ],
       "examples": [
-        "Follow Ruby style guide conventions",
-        "Use proper error handling",
-        "Implement clean code practices"
+        "You are an expert in Ruby on Rails, PostgreSQL, Hotwire (Turbo and Stimulus), and Tailwind CSS",
+        "- Write concise, idiomatic Ruby code with accurate examples.",
+        "- Follow Rails conventions and best practices."
       ],
       "documentation_url": "https://ruby-doc.org/",
       "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/ruby.md"
     },
-    "sls-framework": {
-      "name": "sls-framework",
-      "title": "Serverless Framework Guidelines",
-      "description": "Guidelines for Serverless Framework development and deployment",
-      "category": "serverless",
+    "aws": {
+      "name": "aws",
+      "title": "AWS Best Practices",
+      "description": "Guidelines for AWS resources including alarms, tagging, and default values",
+      "category": "aws",
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2024-07-14T05:00:00Z",
-      "tags": ["serverless", "aws", "lambda", "deployment"],
-      "dependencies": ["aws"],
-      "conflicts": [],
-      "supported_languages": ["yaml", "javascript", "python", "typescript"],
-      "aws_services": ["Lambda", "API Gateway", "CloudFormation", "S3"],
-      "examples": [
-        "Configure serverless.yml properly",
-        "Use environment-specific configurations",
-        "Implement proper IAM roles"
+      "updated_at": "2025-07-14T15:36:07Z",
+      "tags": [
+        "aws",
+        "aws",
+        "cloud",
+        "monitoring",
+        "tagging",
+        "alarms"
       ],
-      "documentation_url": "https://www.serverless.com/framework/docs/",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/sls-framework.md"
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": [
+        "yaml",
+        "json",
+        "terraform"
+      ],
+      "examples": [
+        "Ensure we add alarms for resources",
+        "Alarms will have no action by default but if a sns_topic is provided, actions are enabled",
+        "All resources should be tagged if possible"
+      ],
+      "documentation_url": "https://docs.aws.amazon.com/wellarchitected/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/aws.md",
+      "aws_services": [
+        "CloudWatch",
+        "SNS",
+        "EC2",
+        "S3",
+        "Lambda"
+      ]
+    },
+    "runway": {
+      "name": "runway",
+      "title": "Runway Deployment Guidelines",
+      "description": "Guidelines for using Runway for infrastructure deployment",
+      "category": "aws",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-07-14T15:36:07Z",
+      "tags": [
+        "runway",
+        "deployment",
+        "infrastructure",
+        "aws"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": [
+        "yaml",
+        "python"
+      ],
+      "examples": [],
+      "documentation_url": "",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/runway.md"
     }
   },
   "categories": {
-    "aws": ["aws", "sls-framework"],
-    "python": ["python"],
-    "terraform": ["terraform"],
-    "javascript": ["react"],
-    "ruby": ["ruby"],
-    "serverless": ["sls-framework"]
+    "python": [
+      "python"
+    ],
+    "serverless": [
+      "sls-framework"
+    ],
+    "terraform": [
+      "terraform"
+    ],
+    "aws": [
+      "aws-sam",
+      "aws",
+      "runway"
+    ],
+    "javascript": [
+      "react"
+    ],
+    "ruby": [
+      "ruby"
+    ]
   },
   "tags": {
-    "aws": ["aws", "sls-framework"],
-    "cloud": ["aws"],
-    "monitoring": ["aws"],
-    "tagging": ["aws"],
-    "alarms": ["aws"],
-    "python": ["python"],
-    "development": ["python", "ruby"],
-    "standards": ["python"],
-    "threading": ["python"],
-    "argparse": ["python"],
-    "terraform": ["terraform"],
-    "infrastructure": ["terraform"],
-    "iac": ["terraform"],
-    "security": ["terraform"],
-    "versioning": ["terraform"],
-    "react": ["react"],
-    "javascript": ["react"],
-    "frontend": ["react"],
-    "components": ["react"],
-    "hooks": ["react"],
-    "ruby": ["ruby"],
-    "style": ["ruby"],
-    "conventions": ["ruby"],
-    "serverless": ["sls-framework"],
-    "lambda": ["sls-framework"],
-    "deployment": ["sls-framework"]
+    "python": [
+      "python"
+    ],
+    "development": [
+      "python",
+      "ruby"
+    ],
+    "standards": [
+      "python"
+    ],
+    "threading": [
+      "python"
+    ],
+    "argparse": [
+      "python"
+    ],
+    "serverless": [
+      "sls-framework"
+    ],
+    "aws": [
+      "sls-framework",
+      "aws-sam",
+      "aws",
+      "runway"
+    ],
+    "lambda": [
+      "sls-framework"
+    ],
+    "deployment": [
+      "sls-framework",
+      "runway"
+    ],
+    "terraform": [
+      "terraform"
+    ],
+    "infrastructure": [
+      "terraform",
+      "runway"
+    ],
+    "iac": [
+      "terraform"
+    ],
+    "security": [
+      "terraform"
+    ],
+    "versioning": [
+      "terraform"
+    ],
+    "aws-sam": [
+      "aws-sam"
+    ],
+    "cloud": [
+      "aws-sam",
+      "aws"
+    ],
+    "react": [
+      "react"
+    ],
+    "javascript": [
+      "react"
+    ],
+    "frontend": [
+      "react"
+    ],
+    "components": [
+      "react"
+    ],
+    "hooks": [
+      "react"
+    ],
+    "ruby": [
+      "ruby"
+    ],
+    "style": [
+      "ruby"
+    ],
+    "conventions": [
+      "ruby"
+    ],
+    "monitoring": [
+      "aws"
+    ],
+    "tagging": [
+      "aws"
+    ],
+    "alarms": [
+      "aws"
+    ],
+    "runway": [
+      "runway"
+    ]
   }
 }

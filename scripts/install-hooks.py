@@ -18,11 +18,28 @@ def install_pre_commit_hook():
     hooks_dir.mkdir(parents=True, exist_ok=True)
     
     hook_content = r'''#!/bin/bash
-# Pre-commit hook to sync frontend data when catalog or rules change
+# Pre-commit hook to update catalog and sync frontend data when rules change
 
-# Check if catalog or rules have changed
+# Check if rules have changed
+if git diff --cached --name-only | grep -E "rules/.*\.md"; then
+    echo "📋 Rules changed, updating catalog..."
+    
+    # Update the catalog
+    python3 update_json.py
+    
+    if [ $? -eq 0 ]; then
+        echo "✓ Catalog updated successfully"
+        # Add the updated catalog to the commit
+        git add amazon_q_rule_manager/data/rules_catalog.json
+    else
+        echo "✗ Failed to update catalog"
+        exit 1
+    fi
+fi
+
+# Check if catalog or rules have changed (including the newly updated catalog)
 if git diff --cached --name-only | grep -E "(amazon_q_rule_manager/data/rules_catalog.json|rules/.*\.md)"; then
-    echo "📋 Catalog or rules changed, syncing frontend data..."
+    echo "🔄 Syncing frontend data..."
     
     # Run the sync script
     python3 scripts/sync-frontend-data.py

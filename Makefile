@@ -1,11 +1,15 @@
-.PHONY: help sync-frontend install-hooks dev-frontend build-frontend clean
+.PHONY: help sync-frontend install-hooks dev-frontend build-frontend clean update-catalog
 
 help: ## Show this help message
 	@echo "Amazon Q Rule Manager - Development Commands"
 	@echo "============================================="
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-sync-frontend: ## Sync catalog and rules data to frontend
+update-catalog: ## Update the rules catalog from rule files
+	@echo "📋 Updating rules catalog..."
+	@python3 update_json.py
+
+sync-frontend: update-catalog ## Sync catalog and rules data to frontend
 	@echo "🔄 Syncing frontend data..."
 	@python3 scripts/sync-frontend-data.py
 
