@@ -1,0 +1,3 @@
+[console_scripts]
+amazon-q-rule-manager = amazon_q_rule_manager.cli:main
+aqrm = amazon_q_rule_manager.cli:main

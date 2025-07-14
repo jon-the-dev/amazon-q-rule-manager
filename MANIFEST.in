@@ -1,0 +1,8 @@
+include README.md
+include LICENSE
+include requirements.txt
+include requirements-dev.txt
+recursive-include amazon_q_rule_manager/data *.json
+recursive-include amazon_q_rule_manager/templates *.md
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

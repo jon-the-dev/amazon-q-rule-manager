@@ -1,0 +1,58 @@
+name: Deploy Frontend
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: frontend/package-lock.json
+    
+    - name: Install dependencies
+      run: |
+        cd frontend
+        npm ci
+    
+    - name: Copy latest catalog and rules
+      run: |
+        # Copy the rules catalog
+        cp amazon_q_rule_manager/data/rules_catalog.json frontend/public/
+        # Copy rule markdown files
+        mkdir -p frontend/public/rules
+        cp rules/*.md frontend/public/rules/
+    
+    - name: Build
+      run: |
+        cd frontend
+        npm run build
+        # Copy 404.html for SPA routing on GitHub Pages
+        cp public/404.html build/
+      env:
+        CI: false
+    
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./frontend/build
+        cname: amazonq-rules.dev  # Optional: your custom domain
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: frontend-build
+        path: frontend/build/

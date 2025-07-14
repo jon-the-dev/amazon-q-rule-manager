@@ -1,0 +1,172 @@
+{
+  "version": "2.0.0",
+  "last_updated": "2024-07-14T05:00:00Z",
+  "rules": {
+    "aws": {
+      "name": "aws",
+      "title": "AWS Best Practices",
+      "description": "Guidelines for AWS resources including alarms, tagging, and default values",
+      "category": "aws",
+      "version": "1.2.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-07-14T05:00:00Z",
+      "tags": ["aws", "cloud", "monitoring", "tagging", "alarms"],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": ["yaml", "json", "terraform"],
+      "aws_services": ["CloudWatch", "SNS", "EC2", "S3", "Lambda"],
+      "examples": [
+        "Add CloudWatch alarms to EC2 instances",
+        "Tag resources with standard tags",
+        "Configure SNS notifications for alarms"
+      ],
+      "documentation_url": "https://docs.aws.amazon.com/wellarchitected/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/aws.md"
+    },
+    "python": {
+      "name": "python",
+      "title": "Python Development Standards",
+      "description": "Standards for Python development including version requirements and coding practices",
+      "category": "python",
+      "version": "1.1.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-07-14T05:00:00Z",
+      "tags": ["python", "development", "standards", "threading", "argparse"],
+      "dependencies": [],
+      "conflicts": [],
+      "min_python_version": "3.12",
+      "supported_languages": ["python"],
+      "examples": [
+        "Use threading for parallel operations",
+        "Always use argparse for CLI tools",
+        "Use python-dotenv for configuration"
+      ],
+      "documentation_url": "https://docs.python.org/3/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/python.md"
+    },
+    "terraform": {
+      "name": "terraform",
+      "title": "Terraform Best Practices",
+      "description": "Best practices for Terraform including version requirements and security principles",
+      "category": "terraform",
+      "version": "1.3.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-07-14T05:00:00Z",
+      "tags": ["terraform", "infrastructure", "iac", "security", "versioning"],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": ["hcl", "terraform"],
+      "terraform_providers": ["aws", "azurerm", "google"],
+      "examples": [
+        "Use semantic versioning for modules",
+        "Implement proper state management",
+        "Follow security best practices"
+      ],
+      "documentation_url": "https://developer.hashicorp.com/terraform/docs",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/terraform.md"
+    },
+    "react": {
+      "name": "react",
+      "title": "React Development Guidelines",
+      "description": "Guidelines for React development including component structure and best practices",
+      "category": "javascript",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-07-14T05:00:00Z",
+      "tags": ["react", "javascript", "frontend", "components", "hooks"],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": ["javascript", "typescript", "jsx", "tsx"],
+      "examples": [
+        "Use functional components with hooks",
+        "Implement proper prop validation",
+        "Follow component naming conventions"
+      ],
+      "documentation_url": "https://react.dev/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/react.md"
+    },
+    "ruby": {
+      "name": "ruby",
+      "title": "Ruby Development Standards",
+      "description": "Standards for Ruby development including style guide and best practices",
+      "category": "ruby",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-07-14T05:00:00Z",
+      "tags": ["ruby", "development", "style", "conventions"],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": ["ruby"],
+      "examples": [
+        "Follow Ruby style guide conventions",
+        "Use proper error handling",
+        "Implement clean code practices"
+      ],
+      "documentation_url": "https://ruby-doc.org/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/ruby.md"
+    },
+    "sls-framework": {
+      "name": "sls-framework",
+      "title": "Serverless Framework Guidelines",
+      "description": "Guidelines for Serverless Framework development and deployment",
+      "category": "serverless",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-07-14T05:00:00Z",
+      "tags": ["serverless", "aws", "lambda", "deployment"],
+      "dependencies": ["aws"],
+      "conflicts": [],
+      "supported_languages": ["yaml", "javascript", "python", "typescript"],
+      "aws_services": ["Lambda", "API Gateway", "CloudFormation", "S3"],
+      "examples": [
+        "Configure serverless.yml properly",
+        "Use environment-specific configurations",
+        "Implement proper IAM roles"
+      ],
+      "documentation_url": "https://www.serverless.com/framework/docs/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/sls-framework.md"
+    }
+  },
+  "categories": {
+    "aws": ["aws", "sls-framework"],
+    "python": ["python"],
+    "terraform": ["terraform"],
+    "javascript": ["react"],
+    "ruby": ["ruby"],
+    "serverless": ["sls-framework"]
+  },
+  "tags": {
+    "aws": ["aws", "sls-framework"],
+    "cloud": ["aws"],
+    "monitoring": ["aws"],
+    "tagging": ["aws"],
+    "alarms": ["aws"],
+    "python": ["python"],
+    "development": ["python", "ruby"],
+    "standards": ["python"],
+    "threading": ["python"],
+    "argparse": ["python"],
+    "terraform": ["terraform"],
+    "infrastructure": ["terraform"],
+    "iac": ["terraform"],
+    "security": ["terraform"],
+    "versioning": ["terraform"],
+    "react": ["react"],
+    "javascript": ["react"],
+    "frontend": ["react"],
+    "components": ["react"],
+    "hooks": ["react"],
+    "ruby": ["ruby"],
+    "style": ["ruby"],
+    "conventions": ["ruby"],
+    "serverless": ["sls-framework"],
+    "lambda": ["sls-framework"],
+    "deployment": ["sls-framework"]
+  }
+}

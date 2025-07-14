@@ -6,6 +6,7 @@
     "react": "react.md",
     "runway": "runway.md",
     "ruby": "ruby.md",
-    "aws": "aws.md"
+    "aws": "aws.md",
+    "aws-sam": "aws-sam.md"
   }
 }
