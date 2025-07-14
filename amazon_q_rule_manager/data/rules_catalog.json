@@ -1,74 +1,31 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-07-14T15:36:07Z",
+  "last_updated": "2025-07-14T15:40:34Z",
   "rules": {
-    "python": {
-      "name": "python",
-      "title": "Python Development Standards",
-      "description": "Standards for Python development including version requirements and coding practices",
-      "category": "python",
+    "runway": {
+      "name": "runway",
+      "title": "Runway Deployment Guidelines",
+      "description": "Guidelines for using Runway for infrastructure deployment",
+      "category": "aws",
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
+      "updated_at": "2025-07-14T15:40:34Z",
       "tags": [
-        "python",
-        "development",
-        "standards",
-        "threading",
-        "argparse"
+        "runway",
+        "deployment",
+        "infrastructure",
+        "aws"
       ],
       "dependencies": [],
       "conflicts": [],
       "supported_languages": [
+        "yaml",
         "python"
       ],
-      "examples": [
-        "Use threading for parallel operations when it makes sense",
-        "Always use argparser so we have a consistent -h for help",
-        "Always use python-dotenv to allow for overrides"
-      ],
-      "documentation_url": "https://docs.python.org/3/",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/python.md",
-      "min_python_version": "3.12"
-    },
-    "sls-framework": {
-      "name": "sls-framework",
-      "title": "Serverless Framework Guidelines",
-      "description": "Guidelines for Serverless Framework development and deployment",
-      "category": "serverless",
-      "version": "1.0.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
-      "tags": [
-        "serverless",
-        "aws",
-        "lambda",
-        "deployment"
-      ],
-      "dependencies": [
-        "aws"
-      ],
-      "conflicts": [],
-      "supported_languages": [
-        "yaml",
-        "json",
-        "terraform"
-      ],
-      "examples": [
-        "- Always assume there is a dev and prod envs",
-        "- Use config-dev.yml and config-prod.yml for variables",
-        "- Add alarms for common operational tasks but enable actions when a SNS_TOPIC is provided"
-      ],
-      "documentation_url": "https://www.serverless.com/framework/docs/",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/sls-framework.md",
-      "aws_services": [
-        "Lambda",
-        "API Gateway",
-        "CloudFormation",
-        "S3"
-      ]
+      "examples": [],
+      "documentation_url": "",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/runway.md"
     },
     "terraform": {
       "name": "terraform",
@@ -78,7 +35,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
+      "updated_at": "2025-07-14T15:40:34Z",
       "tags": [
         "terraform",
         "infrastructure",
@@ -105,95 +62,6 @@
         "google"
       ]
     },
-    "aws-sam": {
-      "name": "aws-sam",
-      "title": "Aws Sam",
-      "description": "Guidelines and best practices for aws-sam",
-      "category": "aws",
-      "version": "1.0.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
-      "tags": [
-        "aws-sam",
-        "aws",
-        "cloud"
-      ],
-      "dependencies": [],
-      "conflicts": [],
-      "supported_languages": [
-        "yaml",
-        "json",
-        "terraform"
-      ],
-      "examples": [
-        "- Always use SAM template version 2010-09-09 with Transform: AWS::Serverless-2016-10-31",
-        "- Use parameter files for environment-specific configurations (dev, staging, prod)",
-        "- Define global configurations in the Globals section to avoid repetition"
-      ],
-      "documentation_url": "",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/aws-sam.md"
-    },
-    "react": {
-      "name": "react",
-      "title": "React Development Guidelines",
-      "description": "Guidelines for React development including component structure and best practices",
-      "category": "javascript",
-      "version": "1.0.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
-      "tags": [
-        "react",
-        "javascript",
-        "frontend",
-        "components",
-        "hooks"
-      ],
-      "dependencies": [],
-      "conflicts": [],
-      "supported_languages": [
-        "javascript",
-        "typescript",
-        "jsx",
-        "tsx"
-      ],
-      "examples": [
-        "You are a Senior Front-End Developer and an Expert in ReactJS, NextJS, JavaScript, TypeScript, HTML, CSS and modern UI/UX frameworks (e.g., TailwindCSS). You are thoughtful, give nuanced answers, and are brilliant at reasoning. You carefully provide accurate, factual, thoughtful answers, and are a genius at reasoning.",
-        "- Follow the user\u2019s requirements carefully & to the letter.",
-        "- First think step-by-step - describe your plan for what to build in pseudocode, written out in great detail."
-      ],
-      "documentation_url": "https://react.dev/",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/react.md"
-    },
-    "ruby": {
-      "name": "ruby",
-      "title": "Ruby Development Standards",
-      "description": "Standards for Ruby development including style guide and best practices",
-      "category": "ruby",
-      "version": "1.0.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
-      "tags": [
-        "ruby",
-        "development",
-        "style",
-        "conventions"
-      ],
-      "dependencies": [],
-      "conflicts": [],
-      "supported_languages": [
-        "ruby"
-      ],
-      "examples": [
-        "You are an expert in Ruby on Rails, PostgreSQL, Hotwire (Turbo and Stimulus), and Tailwind CSS",
-        "- Write concise, idiomatic Ruby code with accurate examples.",
-        "- Follow Rails conventions and best practices."
-      ],
-      "documentation_url": "https://ruby-doc.org/",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/ruby.md"
-    },
     "aws": {
       "name": "aws",
       "title": "AWS Best Practices",
@@ -202,7 +70,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
+      "updated_at": "2025-07-14T15:40:34Z",
       "tags": [
         "aws",
         "aws",
@@ -233,55 +101,229 @@
         "Lambda"
       ]
     },
-    "runway": {
-      "name": "runway",
-      "title": "Runway Deployment Guidelines",
-      "description": "Guidelines for using Runway for infrastructure deployment",
+    "python": {
+      "name": "python",
+      "title": "Python Development Standards",
+      "description": "Standards for Python development including version requirements and coding practices",
+      "category": "python",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-07-14T15:40:34Z",
+      "tags": [
+        "python",
+        "development",
+        "standards",
+        "threading",
+        "argparse"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": [
+        "python"
+      ],
+      "examples": [
+        "Use threading for parallel operations when it makes sense",
+        "Always use argparser so we have a consistent -h for help",
+        "Always use python-dotenv to allow for overrides"
+      ],
+      "documentation_url": "https://docs.python.org/3/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/python.md",
+      "min_python_version": "3.12"
+    },
+    "react": {
+      "name": "react",
+      "title": "React Development Guidelines",
+      "description": "Guidelines for React development including component structure and best practices",
+      "category": "javascript",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-07-14T15:40:34Z",
+      "tags": [
+        "react",
+        "javascript",
+        "frontend",
+        "components",
+        "hooks"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": [
+        "javascript",
+        "typescript",
+        "jsx",
+        "tsx"
+      ],
+      "examples": [
+        "You are a Senior Front-End Developer and an Expert in ReactJS, NextJS, JavaScript, TypeScript, HTML, CSS and modern UI/UX frameworks (e.g., TailwindCSS). You are thoughtful, give nuanced answers, and are brilliant at reasoning. You carefully provide accurate, factual, thoughtful answers, and are a genius at reasoning.",
+        "- Follow the user\u2019s requirements carefully & to the letter.",
+        "- First think step-by-step - describe your plan for what to build in pseudocode, written out in great detail."
+      ],
+      "documentation_url": "https://react.dev/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/react.md"
+    },
+    "aws-sam": {
+      "name": "aws-sam",
+      "title": "Aws Sam",
+      "description": "Guidelines and best practices for aws-sam",
       "category": "aws",
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
+      "updated_at": "2025-07-14T15:40:34Z",
       "tags": [
-        "runway",
-        "deployment",
-        "infrastructure",
-        "aws"
+        "aws-sam",
+        "aws",
+        "cloud"
       ],
       "dependencies": [],
       "conflicts": [],
       "supported_languages": [
         "yaml",
-        "python"
+        "json",
+        "terraform"
       ],
-      "examples": [],
+      "examples": [
+        "- Always use SAM template version 2010-09-09 with Transform: AWS::Serverless-2016-10-31",
+        "- Use parameter files for environment-specific configurations (dev, staging, prod)",
+        "- Define global configurations in the Globals section to avoid repetition"
+      ],
       "documentation_url": "",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/runway.md"
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/aws-sam.md"
+    },
+    "sls-framework": {
+      "name": "sls-framework",
+      "title": "Serverless Framework Guidelines",
+      "description": "Guidelines for Serverless Framework development and deployment",
+      "category": "serverless",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-07-14T15:40:34Z",
+      "tags": [
+        "serverless",
+        "aws",
+        "lambda",
+        "deployment"
+      ],
+      "dependencies": [
+        "aws"
+      ],
+      "conflicts": [],
+      "supported_languages": [
+        "yaml",
+        "json",
+        "terraform"
+      ],
+      "examples": [
+        "- Always assume there is a dev and prod envs",
+        "- Use config-dev.yml and config-prod.yml for variables",
+        "- Add alarms for common operational tasks but enable actions when a SNS_TOPIC is provided"
+      ],
+      "documentation_url": "https://www.serverless.com/framework/docs/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/sls-framework.md",
+      "aws_services": [
+        "Lambda",
+        "API Gateway",
+        "CloudFormation",
+        "S3"
+      ]
+    },
+    "ruby": {
+      "name": "ruby",
+      "title": "Ruby Development Standards",
+      "description": "Standards for Ruby development including style guide and best practices",
+      "category": "ruby",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-07-14T15:40:34Z",
+      "tags": [
+        "ruby",
+        "development",
+        "style",
+        "conventions"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": [
+        "ruby"
+      ],
+      "examples": [
+        "You are an expert in Ruby on Rails, PostgreSQL, Hotwire (Turbo and Stimulus), and Tailwind CSS",
+        "- Write concise, idiomatic Ruby code with accurate examples.",
+        "- Follow Rails conventions and best practices."
+      ],
+      "documentation_url": "https://ruby-doc.org/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/ruby.md"
     }
   },
   "categories": {
-    "python": [
-      "python"
-    ],
-    "serverless": [
-      "sls-framework"
+    "aws": [
+      "runway",
+      "aws",
+      "aws-sam"
     ],
     "terraform": [
       "terraform"
     ],
-    "aws": [
-      "aws-sam",
-      "aws",
-      "runway"
+    "python": [
+      "python"
     ],
     "javascript": [
       "react"
+    ],
+    "serverless": [
+      "sls-framework"
     ],
     "ruby": [
       "ruby"
     ]
   },
   "tags": {
+    "runway": [
+      "runway"
+    ],
+    "deployment": [
+      "runway",
+      "sls-framework"
+    ],
+    "infrastructure": [
+      "runway",
+      "terraform"
+    ],
+    "aws": [
+      "runway",
+      "aws",
+      "aws-sam",
+      "sls-framework"
+    ],
+    "terraform": [
+      "terraform"
+    ],
+    "iac": [
+      "terraform"
+    ],
+    "security": [
+      "terraform"
+    ],
+    "versioning": [
+      "terraform"
+    ],
+    "cloud": [
+      "aws",
+      "aws-sam"
+    ],
+    "monitoring": [
+      "aws"
+    ],
+    "tagging": [
+      "aws"
+    ],
+    "alarms": [
+      "aws"
+    ],
     "python": [
       "python"
     ],
@@ -298,45 +340,6 @@
     "argparse": [
       "python"
     ],
-    "serverless": [
-      "sls-framework"
-    ],
-    "aws": [
-      "sls-framework",
-      "aws-sam",
-      "aws",
-      "runway"
-    ],
-    "lambda": [
-      "sls-framework"
-    ],
-    "deployment": [
-      "sls-framework",
-      "runway"
-    ],
-    "terraform": [
-      "terraform"
-    ],
-    "infrastructure": [
-      "terraform",
-      "runway"
-    ],
-    "iac": [
-      "terraform"
-    ],
-    "security": [
-      "terraform"
-    ],
-    "versioning": [
-      "terraform"
-    ],
-    "aws-sam": [
-      "aws-sam"
-    ],
-    "cloud": [
-      "aws-sam",
-      "aws"
-    ],
     "react": [
       "react"
     ],
@@ -352,6 +355,15 @@
     "hooks": [
       "react"
     ],
+    "aws-sam": [
+      "aws-sam"
+    ],
+    "serverless": [
+      "sls-framework"
+    ],
+    "lambda": [
+      "sls-framework"
+    ],
     "ruby": [
       "ruby"
     ],
@@ -360,18 +372,6 @@
     ],
     "conventions": [
       "ruby"
-    ],
-    "monitoring": [
-      "aws"
-    ],
-    "tagging": [
-      "aws"
-    ],
-    "alarms": [
-      "aws"
-    ],
-    "runway": [
-      "runway"
     ]
   }
 }
