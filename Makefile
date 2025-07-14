@@ -1,61 +1,53 @@
-.PHONY: help install install-dev test lint format type-check build clean publish-test publish
+.PHONY: help sync-frontend install-hooks dev-frontend build-frontend clean
 
-help:
-	@echo "Available commands:"
-	@echo "  install      Install package in development mode"
-	@echo "  install-dev  Install package with development dependencies"
-	@echo "  test         Run tests with coverage"
-	@echo "  lint         Run linting checks"
-	@echo "  format       Format code with black"
-	@echo "  type-check   Run type checking with mypy"
-	@echo "  build        Build package for distribution"
-	@echo "  clean        Clean build artifacts"
-	@echo "  publish-test Publish to Test PyPI"
-	@echo "  publish      Publish to PyPI"
+help: ## Show this help message
+	@echo "Amazon Q Rule Manager - Development Commands"
+	@echo "============================================="
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-install:
-	pip install -e .
+sync-frontend: ## Sync catalog and rules data to frontend
+	@echo "🔄 Syncing frontend data..."
+	@python3 scripts/sync-frontend-data.py
 
-install-dev:
-	pip install -e ".[dev]"
+install-hooks: ## Install Git hooks for automatic syncing
+	@echo "🪝 Installing Git hooks..."
+	@python3 scripts/install-hooks.py
 
-test:
-	pytest --cov=amazon_q_rule_manager --cov-report=term-missing --cov-report=html
+dev-frontend: sync-frontend ## Start frontend development server
+	@echo "🚀 Starting frontend development server..."
+	@cd frontend && npm start
 
-lint:
-	flake8 amazon_q_rule_manager
-	black --check amazon_q_rule_manager
+build-frontend: sync-frontend ## Build frontend for production
+	@echo "🏗️  Building frontend..."
+	@cd frontend && npm run build
 
-format:
-	black amazon_q_rule_manager
+clean: ## Clean build artifacts
+	@echo "🧹 Cleaning build artifacts..."
+	@rm -rf frontend/build/
+	@rm -rf frontend/node_modules/
+	@rm -rf dist/
+	@rm -rf *.egg-info/
 
-type-check:
-	mypy amazon_q_rule_manager
+test: ## Run Python tests
+	@echo "🧪 Running tests..."
+	@pytest --cov=amazon_q_rule_manager
 
-build: clean
-	python -m build
+lint: ## Run linting
+	@echo "🔍 Running linters..."
+	@flake8 amazon_q_rule_manager
+	@mypy amazon_q_rule_manager
 
-clean:
-	rm -rf build/
-	rm -rf dist/
-	rm -rf *.egg-info/
-	rm -rf .coverage
-	rm -rf htmlcov/
-	find . -type d -name __pycache__ -exec rm -rf {} +
-	find . -type f -name "*.pyc" -delete
+format: ## Format code
+	@echo "✨ Formatting code..."
+	@black amazon_q_rule_manager/
+	@black scripts/
 
-publish-test: build
-	twine upload --repository testpypi dist/*
+install-dev: ## Install development dependencies
+	@echo "📦 Installing development dependencies..."
+	@pip install -e ".[dev]"
+	@cd frontend && npm install
 
-publish: build
-	twine upload dist/*
-
-pre-commit-install:
-	pre-commit install
-
-pre-commit-run:
-	pre-commit run --all-files
-
-# Legacy rule update (deprecated)
-update-rules:
-	@echo "This command is deprecated. Use 'amazon-q-rule-manager catalog update' instead."
+setup-dev: install-dev install-hooks sync-frontend ## Complete development setup
+	@echo "✅ Development environment setup complete!"
+	@echo "   Run 'make dev-frontend' to start the frontend server"
+	@echo "   Run 'make help' to see all available commands"

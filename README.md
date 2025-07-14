@@ -227,7 +227,46 @@ Rules are stored as Markdown files with rich metadata:
 ```bash
 git clone https://github.com/zerodaysec/amazonq-rules.git
 cd amazonq-rules
+
+# Complete development setup (installs deps, hooks, syncs data)
+make setup-dev
+
+# Or manually:
 pip install -e ".[dev]"
+make install-hooks
+make sync-frontend
+```
+
+### Development Workflow
+
+The project includes automated syncing between the backend catalog and frontend:
+
+1. **Automatic Sync**: When you modify `amazon_q_rule_manager/data/rules_catalog.json` or any rule files in `rules/`, the pre-commit hook automatically syncs the data to `frontend/public/`
+
+2. **Manual Sync**: Run `make sync-frontend` to manually sync data
+
+3. **Frontend Development**: 
+   ```bash
+   make dev-frontend  # Starts development server with latest data
+   ```
+
+4. **GitHub Actions**: The frontend deployment only triggers when:
+   - Frontend files change (`frontend/**`)
+   - Catalog data changes (`amazon_q_rule_manager/data/rules_catalog.json`)
+   - Rule files change (`rules/*.md`)
+
+### Available Make Commands
+
+```bash
+make help           # Show all available commands
+make sync-frontend  # Sync catalog and rules to frontend
+make install-hooks  # Install Git hooks
+make dev-frontend   # Start frontend dev server
+make build-frontend # Build frontend for production
+make test          # Run Python tests
+make lint          # Run linting
+make format        # Format code
+make clean         # Clean build artifacts
 ```
 
 ### Run Tests
@@ -240,6 +279,8 @@ pytest --cov=amazon_q_rule_manager
 ### Code Formatting
 
 ```bash
+make format  # Format all code
+# Or manually:
 black amazon_q_rule_manager/
 flake8 amazon_q_rule_manager/
 mypy amazon_q_rule_manager/
