@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-07-14T15:36:07Z",
+  "last_updated": "2025-07-14T15:49:49Z",
   "rules": {
     "python": {
       "name": "python",
@@ -10,7 +10,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
+      "updated_at": "2025-07-14T15:49:49Z",
       "tags": [
         "python",
         "development",
@@ -40,7 +40,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
+      "updated_at": "2025-07-14T15:49:49Z",
       "tags": [
         "serverless",
         "aws",
@@ -78,7 +78,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
+      "updated_at": "2025-07-14T15:49:49Z",
       "tags": [
         "terraform",
         "infrastructure",
@@ -113,7 +113,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
+      "updated_at": "2025-07-14T15:49:49Z",
       "tags": [
         "aws-sam",
         "aws",
@@ -142,7 +142,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
+      "updated_at": "2025-07-14T15:49:49Z",
       "tags": [
         "react",
         "javascript",
@@ -174,7 +174,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
+      "updated_at": "2025-07-14T15:49:49Z",
       "tags": [
         "ruby",
         "development",
@@ -202,7 +202,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
+      "updated_at": "2025-07-14T15:49:49Z",
       "tags": [
         "aws",
         "aws",
@@ -241,7 +241,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:36:07Z",
+      "updated_at": "2025-07-14T15:49:49Z",
       "tags": [
         "runway",
         "deployment",
