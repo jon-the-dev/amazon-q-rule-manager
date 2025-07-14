@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-07-14T15:40:34Z",
+  "last_updated": "2025-07-14T15:52:22Z",
   "rules": {
     "runway": {
       "name": "runway",
@@ -10,7 +10,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "runway",
         "deployment",
@@ -35,7 +35,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "terraform",
         "infrastructure",
@@ -70,7 +70,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "aws",
         "aws",
@@ -109,7 +109,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "python",
         "development",
@@ -139,7 +139,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "react",
         "javascript",
@@ -171,7 +171,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "aws-sam",
         "aws",
@@ -200,7 +200,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "serverless",
         "aws",
@@ -238,7 +238,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:40:34Z",
+      "updated_at": "2025-07-14T15:52:22Z",
       "tags": [
         "ruby",
         "development",
@@ -257,70 +257,6 @@
       ],
       "documentation_url": "https://ruby-doc.org/",
       "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/ruby.md"
-    },
-    "aws": {
-      "name": "aws",
-      "title": "AWS Best Practices",
-      "description": "Guidelines for AWS resources including alarms, tagging, and default values",
-      "category": "aws",
-      "version": "1.0.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:49:49Z",
-      "tags": [
-        "aws",
-        "aws",
-        "cloud",
-        "monitoring",
-        "tagging",
-        "alarms"
-      ],
-      "dependencies": [],
-      "conflicts": [],
-      "supported_languages": [
-        "yaml",
-        "json",
-        "terraform"
-      ],
-      "examples": [
-        "Ensure we add alarms for resources",
-        "Alarms will have no action by default but if a sns_topic is provided, actions are enabled",
-        "All resources should be tagged if possible"
-      ],
-      "documentation_url": "https://docs.aws.amazon.com/wellarchitected/",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/aws.md",
-      "aws_services": [
-        "CloudWatch",
-        "SNS",
-        "EC2",
-        "S3",
-        "Lambda"
-      ]
-    },
-    "runway": {
-      "name": "runway",
-      "title": "Runway Deployment Guidelines",
-      "description": "Guidelines for using Runway for infrastructure deployment",
-      "category": "aws",
-      "version": "1.0.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T15:49:49Z",
-      "tags": [
-        "runway",
-        "deployment",
-        "infrastructure",
-        "aws"
-      ],
-      "dependencies": [],
-      "conflicts": [],
-      "supported_languages": [
-        "yaml",
-        "python"
-      ],
-      "examples": [],
-      "documentation_url": "",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/runway.md"
     }
   },
   "categories": {
