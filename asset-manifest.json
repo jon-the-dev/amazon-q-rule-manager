@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/amazonq-rules/static/css/main.bc7e00c2.css",
+    "main.js": "/amazonq-rules/static/js/main.b9e3d901.js",
+    "index.html": "/amazonq-rules/index.html",
+    "main.bc7e00c2.css.map": "/amazonq-rules/static/css/main.bc7e00c2.css.map",
+    "main.b9e3d901.js.map": "/amazonq-rules/static/js/main.b9e3d901.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc7e00c2.css",
+    "static/js/main.b9e3d901.js"
+  ]
+}
