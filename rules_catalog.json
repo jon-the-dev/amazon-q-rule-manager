@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-07-14T19:04:48Z",
+  "last_updated": "2025-07-14T20:28:18Z",
   "rules": {
     "external-code-review-checklist": {
       "name": "external-code-review-checklist",
@@ -10,7 +10,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T19:04:48Z",
+      "updated_at": "2025-07-14T20:28:18Z",
       "tags": [
         "external-code-review-checklist"
       ],
@@ -33,7 +33,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T19:04:48Z",
+      "updated_at": "2025-07-14T20:28:18Z",
       "tags": [
         "aws-wafr-checklist"
       ],
@@ -56,7 +56,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T19:04:48Z",
+      "updated_at": "2025-07-14T20:28:18Z",
       "tags": [
         "runway",
         "deployment",
@@ -85,7 +85,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T19:04:48Z",
+      "updated_at": "2025-07-14T20:28:18Z",
       "tags": [
         "terraform",
         "infrastructure",
@@ -120,7 +120,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T19:04:48Z",
+      "updated_at": "2025-07-14T20:28:18Z",
       "tags": [
         "pull-request"
       ],
@@ -142,7 +142,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T19:04:48Z",
+      "updated_at": "2025-07-14T20:28:18Z",
       "tags": [
         "pre-release-security-checklist"
       ],
@@ -165,7 +165,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T19:04:48Z",
+      "updated_at": "2025-07-14T20:28:18Z",
       "tags": [
         "aws",
         "aws",
@@ -204,7 +204,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T19:04:48Z",
+      "updated_at": "2025-07-14T20:28:18Z",
       "tags": [
         "python",
         "development",
@@ -234,7 +234,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T19:04:48Z",
+      "updated_at": "2025-07-14T20:28:18Z",
       "tags": [
         "react",
         "javascript",
@@ -266,7 +266,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T19:04:48Z",
+      "updated_at": "2025-07-14T20:28:18Z",
       "tags": [
         "aws-sam",
         "aws",
@@ -295,7 +295,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T19:04:48Z",
+      "updated_at": "2025-07-14T20:28:18Z",
       "tags": [
         "serverless",
         "aws",
@@ -333,7 +333,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T19:04:48Z",
+      "updated_at": "2025-07-14T20:28:18Z",
       "tags": [
         "ruby",
         "development",
