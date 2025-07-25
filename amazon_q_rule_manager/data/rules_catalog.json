@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-07-14T20:28:18Z",
+  "last_updated": "2025-07-25T01:30:49Z",
   "rules": {
     "external-code-review-checklist": {
       "name": "external-code-review-checklist",
@@ -10,7 +10,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T20:28:18Z",
+      "updated_at": "2025-07-25T01:30:49Z",
       "tags": [
         "external-code-review-checklist"
       ],
@@ -33,7 +33,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T20:28:18Z",
+      "updated_at": "2025-07-25T01:30:49Z",
       "tags": [
         "aws-wafr-checklist"
       ],
@@ -56,7 +56,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T20:28:18Z",
+      "updated_at": "2025-07-25T01:30:49Z",
       "tags": [
         "runway",
         "deployment",
@@ -85,7 +85,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T20:28:18Z",
+      "updated_at": "2025-07-25T01:30:49Z",
       "tags": [
         "terraform",
         "infrastructure",
@@ -112,6 +112,29 @@
         "google"
       ]
     },
+    "managed-services-best-practices": {
+      "name": "managed-services-best-practices",
+      "title": "Managed Services Best Practices",
+      "description": "Guidelines and best practices for managed-services-best-practices",
+      "category": "general",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-07-25T01:30:49Z",
+      "tags": [
+        "managed-services-best-practices"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": [],
+      "examples": [
+        "- Always include health checks and monitoring for all deployed services",
+        "- Use cloud-native monitoring solutions (CloudWatch, Azure Monitor, Google Cloud Monitoring)",
+        "- Implement both infrastructure and application-level monitoring"
+      ],
+      "documentation_url": "",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/managed-services-best-practices.md"
+    },
     "pull-request": {
       "name": "pull-request",
       "title": "Pull Request",
@@ -120,7 +143,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T20:28:18Z",
+      "updated_at": "2025-07-25T01:30:49Z",
       "tags": [
         "pull-request"
       ],
@@ -142,7 +165,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T20:28:18Z",
+      "updated_at": "2025-07-25T01:30:49Z",
       "tags": [
         "pre-release-security-checklist"
       ],
@@ -165,7 +188,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T20:28:18Z",
+      "updated_at": "2025-07-25T01:30:49Z",
       "tags": [
         "aws",
         "aws",
@@ -204,7 +227,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T20:28:18Z",
+      "updated_at": "2025-07-25T01:30:49Z",
       "tags": [
         "python",
         "development",
@@ -234,7 +257,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T20:28:18Z",
+      "updated_at": "2025-07-25T01:30:49Z",
       "tags": [
         "react",
         "javascript",
@@ -266,7 +289,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T20:28:18Z",
+      "updated_at": "2025-07-25T01:30:49Z",
       "tags": [
         "aws-sam",
         "aws",
@@ -295,7 +318,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T20:28:18Z",
+      "updated_at": "2025-07-25T01:30:49Z",
       "tags": [
         "serverless",
         "aws",
@@ -333,7 +356,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-07-14T20:28:18Z",
+      "updated_at": "2025-07-25T01:30:49Z",
       "tags": [
         "ruby",
         "development",
@@ -358,6 +381,7 @@
     "general": [
       "external-code-review-checklist",
       "aws-wafr-checklist",
+      "managed-services-best-practices",
       "pull-request",
       "pre-release-security-checklist"
     ],
@@ -417,6 +441,9 @@
     ],
     "versioning": [
       "terraform"
+    ],
+    "managed-services-best-practices": [
+      "managed-services-best-practices"
     ],
     "pull-request": [
       "pull-request"
