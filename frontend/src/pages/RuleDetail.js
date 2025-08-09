@@ -10,42 +10,43 @@ const RuleDetail = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const fetchRuleDetails = async () => {
+      try {
+        const basePath = process.env.PUBLIC_URL || '';
+        // Fetch rule metadata
+        const catalogResponse = await fetch(`${basePath}/rules_catalog.json`);
+        if (!catalogResponse.ok) {
+          throw new Error('Failed to fetch rules catalog');
+        }
+        const catalogData = await catalogResponse.json();
+        const ruleData = catalogData.rules[ruleName];
+
+        if (!ruleData) {
+          throw new Error('Rule not found');
+        }
+
+        setRule(ruleData);
+
+        // Fetch rule content (markdown)
+        try {
+          const contentResponse = await fetch(`${basePath}/rules/${ruleName}.md`);
+          if (contentResponse.ok) {
+            const content = await contentResponse.text();
+            setRuleContent(content);
+          }
+        } catch (contentError) {
+          console.warn('Could not fetch rule content:', contentError);
+        }
+
+        setLoading(false);
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
+    };
+
     fetchRuleDetails();
   }, [ruleName]);
-
-  const fetchRuleDetails = async () => {
-    try {
-      // Fetch rule metadata
-      const catalogResponse = await fetch('/amazonq-rules/rules_catalog.json');
-      if (!catalogResponse.ok) {
-        throw new Error('Failed to fetch rules catalog');
-      }
-      const catalogData = await catalogResponse.json();
-      const ruleData = catalogData.rules[ruleName];
-      
-      if (!ruleData) {
-        throw new Error('Rule not found');
-      }
-      
-      setRule(ruleData);
-      
-      // Fetch rule content (markdown)
-      try {
-        const contentResponse = await fetch(`/amazonq-rules/rules/${ruleName}.md`);
-        if (contentResponse.ok) {
-          const content = await contentResponse.text();
-          setRuleContent(content);
-        }
-      } catch (contentError) {
-        console.warn('Could not fetch rule content:', contentError);
-      }
-      
-      setLoading(false);
-    } catch (err) {
-      setError(err.message);
-      setLoading(false);
-    }
-  };
 
   const getCategoryColor = (category) => {
     const colors = {

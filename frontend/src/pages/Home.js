@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import RuleCard from '../components/RuleCard';
 import SearchBar from '../components/SearchBar';
 import CategoryFilter from '../components/CategoryFilter';
@@ -12,17 +12,10 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  useEffect(() => {
-    fetchRules();
-  }, []);
-
-  useEffect(() => {
-    filterRules();
-  }, [rules, searchTerm, selectedCategory]);
-
-  const fetchRules = async () => {
+  const fetchRules = useCallback(async () => {
     try {
-      const response = await fetch('/amazonq-rules/rules_catalog.json');
+      const basePath = process.env.PUBLIC_URL || '';
+      const response = await fetch(`${basePath}/rules_catalog.json`);
       if (!response.ok) {
         throw new Error('Failed to fetch rules catalog');
       }
@@ -34,9 +27,13 @@ const Home = () => {
       setError(err.message);
       setLoading(false);
     }
-  };
+  }, []);
 
-  const filterRules = () => {
+  useEffect(() => {
+    fetchRules();
+  }, [fetchRules]);
+
+  useEffect(() => {
     let filtered = rules;
 
     // Filter by search term
@@ -55,7 +52,7 @@ const Home = () => {
     }
 
     setFilteredRules(filtered);
-  };
+  }, [rules, searchTerm, selectedCategory]);
 
   const handleSearch = (term) => {
     setSearchTerm(term);
