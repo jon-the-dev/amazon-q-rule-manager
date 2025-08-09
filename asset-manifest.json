@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/amazon-q-rule-manager/static/css/main.bc7e00c2.css",
-    "main.js": "/amazon-q-rule-manager/static/js/main.b9e3d901.js",
+    "main.js": "/amazon-q-rule-manager/static/js/main.26373477.js",
     "index.html": "/amazon-q-rule-manager/index.html",
     "main.bc7e00c2.css.map": "/amazon-q-rule-manager/static/css/main.bc7e00c2.css.map",
-    "main.b9e3d901.js.map": "/amazon-q-rule-manager/static/js/main.b9e3d901.js.map"
+    "main.26373477.js.map": "/amazon-q-rule-manager/static/js/main.26373477.js.map"
   },
   "entrypoints": [
     "static/css/main.bc7e00c2.css",
-    "static/js/main.b9e3d901.js"
+    "static/js/main.26373477.js"
   ]
 }
