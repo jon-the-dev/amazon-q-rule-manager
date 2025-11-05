@@ -17,15 +17,15 @@ import re
 def extract_rule_metadata(rule_path: Path) -> Dict:
     """
     Extract metadata from a rule file by analyzing its content.
-    
+
     Args:
         rule_path: Path to the rule markdown file
-        
+
     Returns:
         Dictionary containing rule metadata
     """
     rule_name = rule_path.stem
-    
+
     # Default metadata
     metadata = {
         "name": rule_name,
@@ -41,22 +41,22 @@ def extract_rule_metadata(rule_path: Path) -> Dict:
         "conflicts": [],
         "supported_languages": [],
         "examples": [],
-        "documentation_url": "",
-        "source_url": f"https://github.com/zerodaysec/amazonq-rules/blob/main/rules/{rule_path.name}"
+        "documentation_url": None,
+        "source_url": f"https://github.com/zerodaysec/amazonq-rules/blob/main/rules/{rule_path.name}",
     }
-    
+
     # Try to read the file content for better metadata
     try:
-        content = rule_path.read_text(encoding='utf-8')
-        
+        content = rule_path.read_text(encoding="utf-8")
+
         # Extract examples from content
         examples = []
-        for line in content.split('\n'):
+        for line in content.split("\n"):
             line = line.strip()
-            if line and not line.startswith('#') and len(line) > 10:
+            if line and not line.startswith("#") and len(line) > 10:
                 examples.append(line)
         metadata["examples"] = examples[:3]  # Limit to 3 examples
-        
+
         # Set category based on rule name
         if rule_name in ["aws", "sls-framework", "aws-sam"]:
             metadata["category"] = "aws"
@@ -64,95 +64,107 @@ def extract_rule_metadata(rule_path: Path) -> Dict:
             metadata["supported_languages"] = ["yaml", "json", "terraform"]
             if rule_name == "aws":
                 metadata["title"] = "AWS Best Practices"
-                metadata["description"] = "Guidelines for AWS resources including alarms, tagging, and default values"
+                metadata["description"] = (
+                    "Guidelines for AWS resources including alarms, tagging, and default values"
+                )
                 metadata["tags"].extend(["monitoring", "tagging", "alarms"])
                 metadata["aws_services"] = ["CloudWatch", "SNS", "EC2", "S3", "Lambda"]
                 metadata["documentation_url"] = "https://docs.aws.amazon.com/wellarchitected/"
             elif rule_name == "sls-framework":
                 metadata["title"] = "Serverless Framework Guidelines"
-                metadata["description"] = "Guidelines for Serverless Framework development and deployment"
+                metadata["description"] = (
+                    "Guidelines for Serverless Framework development and deployment"
+                )
                 metadata["category"] = "serverless"
                 metadata["tags"] = ["serverless", "aws", "lambda", "deployment"]
                 metadata["dependencies"] = ["aws"]
                 metadata["aws_services"] = ["Lambda", "API Gateway", "CloudFormation", "S3"]
                 metadata["documentation_url"] = "https://www.serverless.com/framework/docs/"
-        
+
         elif rule_name == "python":
             metadata["category"] = "python"
             metadata["title"] = "Python Development Standards"
-            metadata["description"] = "Standards for Python development including version requirements and coding practices"
+            metadata["description"] = (
+                "Standards for Python development including version requirements and coding practices"
+            )
             metadata["tags"] = ["python", "development", "standards", "threading", "argparse"]
             metadata["min_python_version"] = "3.12"
             metadata["supported_languages"] = ["python"]
             metadata["documentation_url"] = "https://docs.python.org/3/"
-        
+
         elif rule_name == "terraform":
             metadata["category"] = "terraform"
             metadata["title"] = "Terraform Best Practices"
-            metadata["description"] = "Best practices for Terraform including version requirements and security principles"
+            metadata["description"] = (
+                "Best practices for Terraform including version requirements and security principles"
+            )
             metadata["tags"] = ["terraform", "infrastructure", "iac", "security", "versioning"]
             metadata["supported_languages"] = ["hcl", "terraform"]
             metadata["terraform_providers"] = ["aws", "azurerm", "google"]
             metadata["documentation_url"] = "https://developer.hashicorp.com/terraform/docs"
-        
+
         elif rule_name == "react":
             metadata["category"] = "javascript"
             metadata["title"] = "React Development Guidelines"
-            metadata["description"] = "Guidelines for React development including component structure and best practices"
+            metadata["description"] = (
+                "Guidelines for React development including component structure and best practices"
+            )
             metadata["tags"] = ["react", "javascript", "frontend", "components", "hooks"]
             metadata["supported_languages"] = ["javascript", "typescript", "jsx", "tsx"]
             metadata["documentation_url"] = "https://react.dev/"
-        
+
         elif rule_name == "ruby":
             metadata["category"] = "ruby"
             metadata["title"] = "Ruby Development Standards"
-            metadata["description"] = "Standards for Ruby development including style guide and best practices"
+            metadata["description"] = (
+                "Standards for Ruby development including style guide and best practices"
+            )
             metadata["tags"] = ["ruby", "development", "style", "conventions"]
             metadata["supported_languages"] = ["ruby"]
             metadata["documentation_url"] = "https://ruby-doc.org/"
-        
+
         elif rule_name == "runway":
             metadata["category"] = "aws"
             metadata["title"] = "Runway Deployment Guidelines"
             metadata["description"] = "Guidelines for using Runway for infrastructure deployment"
             metadata["tags"] = ["runway", "deployment", "infrastructure", "aws"]
             metadata["supported_languages"] = ["yaml", "python"]
-            
+
     except Exception as e:
         print(f"Warning: Could not read content from {rule_path}: {e}")
-    
+
     return metadata
 
 
 def build_categories_and_tags(rules: Dict) -> tuple[Dict[str, List[str]], Dict[str, List[str]]]:
     """
     Build categories and tags mappings from rules.
-    
+
     Args:
         rules: Dictionary of rule metadata
-        
+
     Returns:
         Tuple of (categories, tags) dictionaries
     """
     categories = {}
     tags = {}
-    
+
     for rule_name, rule_data in rules.items():
         category = rule_data.get("category", "general")
         rule_tags = rule_data.get("tags", [])
-        
+
         # Add to categories
         if category not in categories:
             categories[category] = []
         categories[category].append(rule_name)
-        
+
         # Add to tags
         for tag in rule_tags:
             if tag not in tags:
                 tags[tag] = []
             if rule_name not in tags[tag]:
                 tags[tag].append(rule_name)
-    
+
     return categories, tags
 
 
@@ -172,11 +184,17 @@ def get_rules_catalog(rules_dir: str = "./rules") -> Dict:
     rules_path = Path(rules_dir)
     if not rules_path.exists() or not rules_path.is_dir():
         print(f"Rules directory not found: {rules_dir}")
-        return {"version": "2.0.0", "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "rules": {}, "categories": {}, "tags": {}}
+        return {
+            "version": "2.0.0",
+            "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "rules": {},
+            "categories": {},
+            "tags": {},
+        }
 
     # Scan for rule files
     for file_path in rules_path.iterdir():
-        if file_path.is_file() and file_path.suffix == '.md':
+        if file_path.is_file() and file_path.suffix == ".md":
             rule_name = file_path.stem
             rules[rule_name] = extract_rule_metadata(file_path)
 
@@ -189,7 +207,7 @@ def get_rules_catalog(rules_dir: str = "./rules") -> Dict:
         "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "rules": rules,
         "categories": categories,
-        "tags": tags
+        "tags": tags,
     }
 
     return catalog
@@ -206,7 +224,7 @@ def save_rules_catalog(catalog: Dict, output_file: str) -> None:
     # Ensure the output directory exists
     output_path = Path(output_file)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    
+
     with open(output_file, "w") as f:
         json.dump(catalog, f, indent=2)
 
