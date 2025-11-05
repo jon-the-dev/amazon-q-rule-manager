@@ -1,13 +1,13 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './pages/Home';
-import RuleDetail from './pages/RuleDetail';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import RuleDetail from "./pages/RuleDetail";
+import "./App.css";
 
 function App() {
   return (
-    <Router basename="/amazonq-rules">
+    <Router basename="/amazon-q-rule-manager">
       <div className="App">
         <Header />
         <main className="main-content">
