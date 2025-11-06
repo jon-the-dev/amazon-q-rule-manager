@@ -1,5 +1,8 @@
 # Amazon Q Rule Manager
 
+[![CI/CD](https://github.com/jon-the-dev/amazon-q-rule-manager/actions/workflows/ci.yml/badge.svg)](https://github.com/jon-the-dev/amazon-q-rule-manager/actions/workflows/ci.yml)
+[![Deploy Frontend](https://github.com/jon-the-dev/amazon-q-rule-manager/actions/workflows/deploy-frontend.yml/badge.svg)](https://github.com/jon-the-dev/amazon-q-rule-manager/actions/workflows/deploy-frontend.yml)
+
 A robust manager for Amazon Q Developer rules with global and workspace support.
 
 [![PyPI version](https://badge.fury.io/py/amazon-q-rule-manager.svg)](https://badge.fury.io/py/amazon-q-rule-manager)
