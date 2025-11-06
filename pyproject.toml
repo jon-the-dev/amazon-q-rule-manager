@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "amazon-q-rule-manager"
-version = "1.0.1"
+version = "1.0.2"
 authors = [{ name = "Amazon Q Rules Team", email = "support@example.com" }]
 description = "A robust manager for Amazon Q Developer rules with global and workspace support"
 readme = "README.md"
