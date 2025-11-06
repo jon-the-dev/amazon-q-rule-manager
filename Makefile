@@ -1,4 +1,4 @@
-.PHONY: help sync-frontend install-hooks dev-frontend build-frontend clean update-catalog
+.PHONY: help sync-frontend install-hooks dev-frontend build-frontend clean update-catalog test lint format install-dev setup-dev build check-package pypi-upload pypi-test-upload release
 
 help: ## Show this help message
 	@echo "Amazon Q Rule Manager - Development Commands"
@@ -55,3 +55,55 @@ setup-dev: install-dev install-hooks sync-frontend ## Complete development setup
 	@echo "✅ Development environment setup complete!"
 	@echo "   Run 'make dev-frontend' to start the frontend server"
 	@echo "   Run 'make help' to see all available commands"
+
+pypi-upload: ## Upload package to PyPI (requires PYPI_TOKEN environment variable)
+	@echo "📦 Uploading to PyPI..."
+	@if [ -f .env ]; then export $$(cat .env | xargs); fi; \
+	if [ -z "$$PYPI_TOKEN" ]; then \
+		echo "❌ Error: PYPI_TOKEN environment variable is not set"; \
+		echo "   Please set your PyPI API token in .env file or export PYPI_TOKEN=your_token_here"; \
+		exit 1; \
+	fi
+	@if [ ! -d "dist" ] || [ -z "$$(ls -A dist 2>/dev/null)" ]; then \
+		echo "❌ Error: No distribution files found in dist/"; \
+		echo "   Run 'make build' first to create distribution files"; \
+		exit 1; \
+	fi
+	@if [ -f .env ]; then export $$(cat .env | xargs); fi; \
+	twine upload dist/* --username __token__ --password $$PYPI_TOKEN
+	@echo "✅ Package uploaded successfully!"
+
+build: clean ## Build the package for distribution
+	@echo "🏗️  Building package..."
+	@python -m build
+	@echo "✅ Package built successfully!"
+	@echo "   Files created in dist/:"
+	@ls -la dist/
+
+pypi-test-upload: ## Upload package to TestPyPI (requires PYPI_TEST_TOKEN environment variable)
+	@echo "📦 Uploading to TestPyPI..."
+	@if [ -z "$$PYPI_TEST_TOKEN" ]; then \
+		echo "❌ Error: PYPI_TEST_TOKEN environment variable is not set"; \
+		echo "   Please set your TestPyPI API token: export PYPI_TEST_TOKEN=your_token_here"; \
+		exit 1; \
+	fi
+	@if [ ! -d "dist" ] || [ -z "$$(ls -A dist 2>/dev/null)" ]; then \
+		echo "❌ Error: No distribution files found in dist/"; \
+		echo "   Run 'make build' first to create distribution files"; \
+		exit 1; \
+	fi
+	@twine upload --repository testpypi dist/* --username __token__ --password $$PYPI_TEST_TOKEN
+	@echo "✅ Package uploaded to TestPyPI successfully!"
+
+check-package: ## Check package before upload
+	@echo "🔍 Checking package..."
+	@if [ ! -d "dist" ] || [ -z "$$(ls -A dist 2>/dev/null)" ]; then \
+		echo "❌ Error: No distribution files found in dist/"; \
+		echo "   Run 'make build' first to create distribution files"; \
+		exit 1; \
+	fi
+	@twine check dist/*
+	@echo "✅ Package check passed!"
+
+release: build check-package pypi-upload ## Complete release process (build, check, and upload)
+	@echo "🎉 Release complete!"
