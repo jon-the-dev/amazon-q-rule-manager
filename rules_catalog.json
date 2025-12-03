@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-11-05T23:54:43Z",
+  "last_updated": "2025-12-03T21:18:52Z",
   "rules": {
     "react": {
       "name": "react",
@@ -10,7 +10,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:54:43Z",
+      "updated_at": "2025-12-03T21:18:52Z",
       "tags": [
         "react",
         "javascript",
@@ -42,7 +42,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:54:43Z",
+      "updated_at": "2025-12-03T21:18:52Z",
       "tags": [
         "pull-request"
       ],
@@ -64,7 +64,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:54:43Z",
+      "updated_at": "2025-12-03T21:18:52Z",
       "tags": [
         "terraform",
         "infrastructure",
@@ -99,7 +99,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:54:43Z",
+      "updated_at": "2025-12-03T21:18:52Z",
       "tags": [
         "serverless",
         "aws",
@@ -137,7 +137,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:54:43Z",
+      "updated_at": "2025-12-03T21:18:52Z",
       "tags": [
         "external-code-review-checklist"
       ],
@@ -160,7 +160,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:54:43Z",
+      "updated_at": "2025-12-03T21:18:52Z",
       "tags": [
         "aws-sam",
         "aws",
@@ -189,7 +189,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:54:43Z",
+      "updated_at": "2025-12-03T21:18:52Z",
       "tags": [
         "runway",
         "deployment",
@@ -218,7 +218,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:54:43Z",
+      "updated_at": "2025-12-03T21:18:52Z",
       "tags": [
         "ruby",
         "development",
@@ -246,7 +246,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:54:43Z",
+      "updated_at": "2025-12-03T21:18:52Z",
       "tags": [
         "python",
         "development",
@@ -260,9 +260,9 @@
         "python"
       ],
       "examples": [
-        "Use threading for parallel operations when it makes sense",
-        "Always use argparser so we have a consistent -h for help",
-        "Always use python-dotenv to allow for overrides"
+        "- Use threading for parallel operations when it makes sense",
+        "- Always use argparser so we have a consistent -h for help",
+        "- Always use python-dotenv to allow for overrides"
       ],
       "documentation_url": "https://docs.python.org/3/",
       "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/python.md",
@@ -276,7 +276,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:54:43Z",
+      "updated_at": "2025-12-03T21:18:52Z",
       "tags": [
         "aws",
         "aws",
@@ -315,7 +315,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:54:43Z",
+      "updated_at": "2025-12-03T21:18:52Z",
       "tags": [
         "pre-release-security-checklist"
       ],
@@ -338,7 +338,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:54:43Z",
+      "updated_at": "2025-12-03T21:18:52Z",
       "tags": [
         "managed-services-best-practices"
       ],
@@ -361,7 +361,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:54:43Z",
+      "updated_at": "2025-12-03T21:18:52Z",
       "tags": [
         "aws-wafr-checklist"
       ],
