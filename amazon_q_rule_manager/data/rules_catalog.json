@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-12-03T21:20:51Z",
+  "last_updated": "2025-12-03T21:26:43Z",
   "rules": {
     "react": {
       "name": "react",
@@ -10,7 +10,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-12-03T21:20:51Z",
+      "updated_at": "2025-12-03T21:26:43Z",
       "tags": [
         "react",
         "javascript",
@@ -42,7 +42,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-12-03T21:20:51Z",
+      "updated_at": "2025-12-03T21:26:43Z",
       "tags": [
         "pull-request"
       ],
@@ -64,7 +64,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-12-03T21:20:51Z",
+      "updated_at": "2025-12-03T21:26:43Z",
       "tags": [
         "terraform",
         "infrastructure",
@@ -99,7 +99,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-12-03T21:20:51Z",
+      "updated_at": "2025-12-03T21:26:43Z",
       "tags": [
         "serverless",
         "aws",
@@ -137,7 +137,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-12-03T21:20:51Z",
+      "updated_at": "2025-12-03T21:26:43Z",
       "tags": [
         "external-code-review-checklist"
       ],
@@ -160,7 +160,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-12-03T21:20:51Z",
+      "updated_at": "2025-12-03T21:26:43Z",
       "tags": [
         "aws-sam",
         "aws",
@@ -181,6 +181,29 @@
       "documentation_url": null,
       "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/aws-sam.md"
     },
+    "git": {
+      "name": "git",
+      "title": "Git",
+      "description": "Guidelines and best practices for git",
+      "category": "general",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-12-03T21:26:43Z",
+      "tags": [
+        "git"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": [],
+      "examples": [
+        "inclusion: always",
+        "When making code changes, update the CHANGELOG file:",
+        "- Document all edits, fixes, features, and breaking changes"
+      ],
+      "documentation_url": null,
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/git.md"
+    },
     "runway": {
       "name": "runway",
       "title": "Runway Deployment Guidelines",
@@ -189,7 +212,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-12-03T21:20:51Z",
+      "updated_at": "2025-12-03T21:26:43Z",
       "tags": [
         "runway",
         "deployment",
@@ -218,7 +241,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-12-03T21:20:51Z",
+      "updated_at": "2025-12-03T21:26:43Z",
       "tags": [
         "ruby",
         "development",
@@ -246,7 +269,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-12-03T21:20:51Z",
+      "updated_at": "2025-12-03T21:26:43Z",
       "tags": [
         "python",
         "development",
@@ -276,7 +299,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-12-03T21:20:51Z",
+      "updated_at": "2025-12-03T21:26:43Z",
       "tags": [
         "aws",
         "aws",
@@ -315,7 +338,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-12-03T21:20:51Z",
+      "updated_at": "2025-12-03T21:26:43Z",
       "tags": [
         "pre-release-security-checklist"
       ],
@@ -338,7 +361,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-12-03T21:20:51Z",
+      "updated_at": "2025-12-03T21:26:43Z",
       "tags": [
         "managed-services-best-practices"
       ],
@@ -361,7 +384,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-12-03T21:20:51Z",
+      "updated_at": "2025-12-03T21:26:43Z",
       "tags": [
         "aws-wafr-checklist"
       ],
@@ -384,6 +407,7 @@
     "general": [
       "pull-request",
       "external-code-review-checklist",
+      "git",
       "pre-release-security-checklist",
       "managed-services-best-practices",
       "aws-wafr-checklist"
@@ -466,6 +490,9 @@
     "cloud": [
       "aws-sam",
       "aws"
+    ],
+    "git": [
+      "git"
     ],
     "runway": [
       "runway"
