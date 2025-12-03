@@ -1,36 +1,95 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-11-05T23:52:43Z",
+  "last_updated": "2025-11-05T23:54:43Z",
   "rules": {
-    "python": {
-      "name": "python",
-      "title": "Python Development Standards",
-      "description": "Standards for Python development including version requirements and coding practices",
-      "category": "python",
+    "react": {
+      "name": "react",
+      "title": "React Development Guidelines",
+      "description": "Guidelines for React development including component structure and best practices",
+      "category": "javascript",
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:52:43Z",
+      "updated_at": "2025-11-05T23:54:43Z",
       "tags": [
-        "python",
-        "development",
-        "standards",
-        "threading",
-        "argparse"
+        "react",
+        "javascript",
+        "frontend",
+        "components",
+        "hooks"
       ],
       "dependencies": [],
       "conflicts": [],
       "supported_languages": [
-        "python"
+        "javascript",
+        "typescript",
+        "jsx",
+        "tsx"
       ],
       "examples": [
-        "Use threading for parallel operations when it makes sense",
-        "Always use argparser so we have a consistent -h for help",
-        "Always use python-dotenv to allow for overrides"
+        "You are a Senior Front-End Developer and an Expert in ReactJS, NextJS, JavaScript, TypeScript, HTML, CSS and modern UI/UX frameworks (e.g., TailwindCSS). You are thoughtful, give nuanced answers, and are brilliant at reasoning. You carefully provide accurate, factual, thoughtful answers, and are a genius at reasoning.",
+        "- Follow the user\u2019s requirements carefully & to the letter.",
+        "- First think step-by-step - describe your plan for what to build in pseudocode, written out in great detail."
       ],
-      "documentation_url": "https://docs.python.org/3/",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/python.md",
-      "min_python_version": "3.12"
+      "documentation_url": "https://react.dev/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/react.md"
+    },
+    "pull-request": {
+      "name": "pull-request",
+      "title": "Pull Request",
+      "description": "Guidelines and best practices for pull-request",
+      "category": "general",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-11-05T23:54:43Z",
+      "tags": [
+        "pull-request"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": [],
+      "examples": [
+        "When making a Pull Request run appropriate tools such as bandit and trufflehog and add that output to the Pull request.",
+        "If there are linting or code validation make targets make sure we run them and copy their logs to the PR"
+      ],
+      "documentation_url": null,
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/pull-request.md"
+    },
+    "terraform": {
+      "name": "terraform",
+      "title": "Terraform Best Practices",
+      "description": "Best practices for Terraform including version requirements and security principles",
+      "category": "terraform",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-11-05T23:54:43Z",
+      "tags": [
+        "terraform",
+        "infrastructure",
+        "iac",
+        "security",
+        "versioning"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": [
+        "hcl",
+        "terraform"
+      ],
+      "examples": [
+        "Code for v1.9.0 of terraform unless explicitly asked",
+        "Always generate a README for the modules we create",
+        "Assume principles of least privilege Always"
+      ],
+      "documentation_url": "https://developer.hashicorp.com/terraform/docs",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/terraform.md",
+      "terraform_providers": [
+        "aws",
+        "azurerm",
+        "google"
+      ]
     },
     "sls-framework": {
       "name": "sls-framework",
@@ -40,7 +99,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:52:43Z",
+      "updated_at": "2025-11-05T23:54:43Z",
       "tags": [
         "serverless",
         "aws",
@@ -70,86 +129,28 @@
         "S3"
       ]
     },
-    "terraform": {
-      "name": "terraform",
-      "title": "Terraform Best Practices",
-      "description": "Best practices for Terraform including version requirements and security principles",
-      "category": "terraform",
-      "version": "1.0.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:52:43Z",
-      "tags": [
-        "terraform",
-        "infrastructure",
-        "iac",
-        "security",
-        "versioning"
-      ],
-      "dependencies": [],
-      "conflicts": [],
-      "supported_languages": [
-        "hcl",
-        "terraform"
-      ],
-      "examples": [
-        "Code for v1.9.0 of terraform unless explicitly asked",
-        "Always generate a README for the modules we create",
-        "Assume principles of least privilege Always"
-      ],
-      "documentation_url": "https://developer.hashicorp.com/terraform/docs",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/terraform.md",
-      "terraform_providers": [
-        "aws",
-        "azurerm",
-        "google"
-      ]
-    },
-    "pre-release-security-checklist": {
-      "name": "pre-release-security-checklist",
-      "title": "Pre Release Security Checklist",
-      "description": "Guidelines and best practices for pre-release-security-checklist",
+    "external-code-review-checklist": {
+      "name": "external-code-review-checklist",
+      "title": "External Code Review Checklist",
+      "description": "Guidelines and best practices for external-code-review-checklist",
       "category": "general",
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:52:43Z",
+      "updated_at": "2025-11-05T23:54:43Z",
       "tags": [
-        "pre-release-security-checklist"
+        "external-code-review-checklist"
       ],
       "dependencies": [],
       "conflicts": [],
       "supported_languages": [],
       "examples": [
-        "This checklist is designed for LLM review of codebases before public release under GPL or MIT licenses. Each item should be verified and marked as \u2705 PASS, \u274c FAIL, or \u26a0\ufe0f REVIEW NEEDED.",
-        "- [ ] No hardcoded API keys, tokens, or secrets in source code",
-        "- [ ] No AWS access keys, secret keys, or session tokens"
+        "When reviewing open source projects, evaluate these critical areas systematically:",
+        "- **Dependency Analysis**: Check for known CVEs in dependencies using tools like `npm audit`, `pip-audit`, or `snyk`",
+        "- **Data Leakage**: Scan for hardcoded secrets, API keys, credentials, or sensitive data"
       ],
       "documentation_url": null,
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/pre-release-security-checklist.md"
-    },
-    "aws-wafr-checklist": {
-      "name": "aws-wafr-checklist",
-      "title": "Aws Wafr Checklist",
-      "description": "Guidelines and best practices for aws-wafr-checklist",
-      "category": "general",
-      "version": "1.0.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:52:43Z",
-      "tags": [
-        "aws-wafr-checklist"
-      ],
-      "dependencies": [],
-      "conflicts": [],
-      "supported_languages": [],
-      "examples": [
-        "This checklist is designed for comprehensive review of codebases against AWS Well-Architected Framework principles and cloud-native best practices. Each item should be verified and marked as \u2705 PASS, \u274c FAIL, or \u26a0\ufe0f REVIEW NEEDED.",
-        "- [ ] IAM roles follow principle of least privilege",
-        "- [ ] No hardcoded AWS credentials in code or configuration"
-      ],
-      "documentation_url": null,
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/aws-wafr-checklist.md"
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/external-code-review-checklist.md"
     },
     "aws-sam": {
       "name": "aws-sam",
@@ -159,7 +160,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:52:43Z",
+      "updated_at": "2025-11-05T23:54:43Z",
       "tags": [
         "aws-sam",
         "aws",
@@ -180,82 +181,34 @@
       "documentation_url": null,
       "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/aws-sam.md"
     },
-    "react": {
-      "name": "react",
-      "title": "React Development Guidelines",
-      "description": "Guidelines for React development including component structure and best practices",
-      "category": "javascript",
+    "runway": {
+      "name": "runway",
+      "title": "Runway Deployment Guidelines",
+      "description": "Guidelines for using Runway for infrastructure deployment",
+      "category": "aws",
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:52:43Z",
+      "updated_at": "2025-11-05T23:54:43Z",
       "tags": [
-        "react",
-        "javascript",
-        "frontend",
-        "components",
-        "hooks"
+        "runway",
+        "deployment",
+        "infrastructure",
+        "aws"
       ],
       "dependencies": [],
       "conflicts": [],
       "supported_languages": [
-        "javascript",
-        "typescript",
-        "jsx",
-        "tsx"
+        "yaml",
+        "python"
       ],
       "examples": [
-        "You are a Senior Front-End Developer and an Expert in ReactJS, NextJS, JavaScript, TypeScript, HTML, CSS and modern UI/UX frameworks (e.g., TailwindCSS). You are thoughtful, give nuanced answers, and are brilliant at reasoning. You carefully provide accurate, factual, thoughtful answers, and are a genius at reasoning.",
-        "- Follow the user\u2019s requirements carefully & to the letter.",
-        "- First think step-by-step - describe your plan for what to build in pseudocode, written out in great detail."
-      ],
-      "documentation_url": "https://react.dev/",
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/react.md"
-    },
-    "managed-services-best-practices": {
-      "name": "managed-services-best-practices",
-      "title": "Managed Services Best Practices",
-      "description": "Guidelines and best practices for managed-services-best-practices",
-      "category": "general",
-      "version": "1.0.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:52:43Z",
-      "tags": [
-        "managed-services-best-practices"
-      ],
-      "dependencies": [],
-      "conflicts": [],
-      "supported_languages": [],
-      "examples": [
-        "- Always include health checks and monitoring for all deployed services",
-        "- Use cloud-native monitoring solutions (CloudWatch, Azure Monitor, Google Cloud Monitoring)",
-        "- Implement both infrastructure and application-level monitoring"
+        "Runway is a lightweight wrapper around infrastructure deployment tools (CloudFormation, Terraform, etc.) that makes it easier to manage complex deployments across multiple environments. This guide covers best practices for using Runway with CFNgin hooks for extended IaC deployments.",
+        "runway-project/",
+        "\u251c\u2500\u2500 runway.yml                 # Main runway configuration"
       ],
       "documentation_url": null,
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/managed-services-best-practices.md"
-    },
-    "pull-request": {
-      "name": "pull-request",
-      "title": "Pull Request",
-      "description": "Guidelines and best practices for pull-request",
-      "category": "general",
-      "version": "1.0.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:52:43Z",
-      "tags": [
-        "pull-request"
-      ],
-      "dependencies": [],
-      "conflicts": [],
-      "supported_languages": [],
-      "examples": [
-        "When making a Pull Request run appropriate tools such as bandit and trufflehog and add that output to the Pull request.",
-        "If there are linting or code validation make targets make sure we run them and copy their logs to the PR"
-      ],
-      "documentation_url": null,
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/pull-request.md"
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/runway.md"
     },
     "ruby": {
       "name": "ruby",
@@ -265,7 +218,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:52:43Z",
+      "updated_at": "2025-11-05T23:54:43Z",
       "tags": [
         "ruby",
         "development",
@@ -285,6 +238,36 @@
       "documentation_url": "https://ruby-doc.org/",
       "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/ruby.md"
     },
+    "python": {
+      "name": "python",
+      "title": "Python Development Standards",
+      "description": "Standards for Python development including version requirements and coding practices",
+      "category": "python",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-11-05T23:54:43Z",
+      "tags": [
+        "python",
+        "development",
+        "standards",
+        "threading",
+        "argparse"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": [
+        "python"
+      ],
+      "examples": [
+        "Use threading for parallel operations when it makes sense",
+        "Always use argparser so we have a consistent -h for help",
+        "Always use python-dotenv to allow for overrides"
+      ],
+      "documentation_url": "https://docs.python.org/3/",
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/python.md",
+      "min_python_version": "3.12"
+    },
     "aws": {
       "name": "aws",
       "title": "AWS Best Practices",
@@ -293,7 +276,7 @@
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:52:43Z",
+      "updated_at": "2025-11-05T23:54:43Z",
       "tags": [
         "aws",
         "aws",
@@ -324,120 +307,123 @@
         "Lambda"
       ]
     },
-    "runway": {
-      "name": "runway",
-      "title": "Runway Deployment Guidelines",
-      "description": "Guidelines for using Runway for infrastructure deployment",
-      "category": "aws",
-      "version": "1.0.0",
-      "author": "Amazon Q Rules Team",
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:52:43Z",
-      "tags": [
-        "runway",
-        "deployment",
-        "infrastructure",
-        "aws"
-      ],
-      "dependencies": [],
-      "conflicts": [],
-      "supported_languages": [
-        "yaml",
-        "python"
-      ],
-      "examples": [
-        "Runway is a lightweight wrapper around infrastructure deployment tools (CloudFormation, Terraform, etc.) that makes it easier to manage complex deployments across multiple environments. This guide covers best practices for using Runway with CFNgin hooks for extended IaC deployments.",
-        "runway-project/",
-        "\u251c\u2500\u2500 runway.yml                 # Main runway configuration"
-      ],
-      "documentation_url": null,
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/runway.md"
-    },
-    "external-code-review-checklist": {
-      "name": "external-code-review-checklist",
-      "title": "External Code Review Checklist",
-      "description": "Guidelines and best practices for external-code-review-checklist",
+    "pre-release-security-checklist": {
+      "name": "pre-release-security-checklist",
+      "title": "Pre Release Security Checklist",
+      "description": "Guidelines and best practices for pre-release-security-checklist",
       "category": "general",
       "version": "1.0.0",
       "author": "Amazon Q Rules Team",
       "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2025-11-05T23:52:43Z",
+      "updated_at": "2025-11-05T23:54:43Z",
       "tags": [
-        "external-code-review-checklist"
+        "pre-release-security-checklist"
       ],
       "dependencies": [],
       "conflicts": [],
       "supported_languages": [],
       "examples": [
-        "When reviewing open source projects, evaluate these critical areas systematically:",
-        "- **Dependency Analysis**: Check for known CVEs in dependencies using tools like `npm audit`, `pip-audit`, or `snyk`",
-        "- **Data Leakage**: Scan for hardcoded secrets, API keys, credentials, or sensitive data"
+        "This checklist is designed for LLM review of codebases before public release under GPL or MIT licenses. Each item should be verified and marked as \u2705 PASS, \u274c FAIL, or \u26a0\ufe0f REVIEW NEEDED.",
+        "- [ ] No hardcoded API keys, tokens, or secrets in source code",
+        "- [ ] No AWS access keys, secret keys, or session tokens"
       ],
       "documentation_url": null,
-      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/external-code-review-checklist.md"
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/pre-release-security-checklist.md"
+    },
+    "managed-services-best-practices": {
+      "name": "managed-services-best-practices",
+      "title": "Managed Services Best Practices",
+      "description": "Guidelines and best practices for managed-services-best-practices",
+      "category": "general",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-11-05T23:54:43Z",
+      "tags": [
+        "managed-services-best-practices"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": [],
+      "examples": [
+        "- Always include health checks and monitoring for all deployed services",
+        "- Use cloud-native monitoring solutions (CloudWatch, Azure Monitor, Google Cloud Monitoring)",
+        "- Implement both infrastructure and application-level monitoring"
+      ],
+      "documentation_url": null,
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/managed-services-best-practices.md"
+    },
+    "aws-wafr-checklist": {
+      "name": "aws-wafr-checklist",
+      "title": "Aws Wafr Checklist",
+      "description": "Guidelines and best practices for aws-wafr-checklist",
+      "category": "general",
+      "version": "1.0.0",
+      "author": "Amazon Q Rules Team",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2025-11-05T23:54:43Z",
+      "tags": [
+        "aws-wafr-checklist"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "supported_languages": [],
+      "examples": [
+        "This checklist is designed for comprehensive review of codebases against AWS Well-Architected Framework principles and cloud-native best practices. Each item should be verified and marked as \u2705 PASS, \u274c FAIL, or \u26a0\ufe0f REVIEW NEEDED.",
+        "- [ ] IAM roles follow principle of least privilege",
+        "- [ ] No hardcoded AWS credentials in code or configuration"
+      ],
+      "documentation_url": null,
+      "source_url": "https://github.com/zerodaysec/amazonq-rules/blob/main/rules/aws-wafr-checklist.md"
     }
   },
   "categories": {
-    "python": [
-      "python"
+    "javascript": [
+      "react"
     ],
-    "serverless": [
-      "sls-framework"
+    "general": [
+      "pull-request",
+      "external-code-review-checklist",
+      "pre-release-security-checklist",
+      "managed-services-best-practices",
+      "aws-wafr-checklist"
     ],
     "terraform": [
       "terraform"
     ],
-    "general": [
-      "pre-release-security-checklist",
-      "aws-wafr-checklist",
-      "managed-services-best-practices",
-      "pull-request",
-      "external-code-review-checklist"
-    ],
-    "aws": [
-      "aws-sam",
-      "aws",
-      "runway"
-    ],
-    "javascript": [
-      "react"
-    ],
-    "ruby": [
-      "ruby"
-    ]
-  },
-  "tags": {
-    "python": [
-      "python"
-    ],
-    "development": [
-      "python",
-      "ruby"
-    ],
-    "standards": [
-      "python"
-    ],
-    "threading": [
-      "python"
-    ],
-    "argparse": [
-      "python"
-    ],
     "serverless": [
       "sls-framework"
     ],
     "aws": [
-      "sls-framework",
       "aws-sam",
-      "aws",
-      "runway"
+      "runway",
+      "aws"
     ],
-    "lambda": [
-      "sls-framework"
+    "ruby": [
+      "ruby"
     ],
-    "deployment": [
-      "sls-framework",
-      "runway"
+    "python": [
+      "python"
+    ]
+  },
+  "tags": {
+    "react": [
+      "react"
+    ],
+    "javascript": [
+      "react"
+    ],
+    "frontend": [
+      "react"
+    ],
+    "components": [
+      "react"
+    ],
+    "hooks": [
+      "react"
+    ],
+    "pull-request": [
+      "pull-request"
     ],
     "terraform": [
       "terraform"
@@ -455,11 +441,24 @@
     "versioning": [
       "terraform"
     ],
-    "pre-release-security-checklist": [
-      "pre-release-security-checklist"
+    "serverless": [
+      "sls-framework"
     ],
-    "aws-wafr-checklist": [
-      "aws-wafr-checklist"
+    "aws": [
+      "sls-framework",
+      "aws-sam",
+      "runway",
+      "aws"
+    ],
+    "lambda": [
+      "sls-framework"
+    ],
+    "deployment": [
+      "sls-framework",
+      "runway"
+    ],
+    "external-code-review-checklist": [
+      "external-code-review-checklist"
     ],
     "aws-sam": [
       "aws-sam"
@@ -468,35 +467,33 @@
       "aws-sam",
       "aws"
     ],
-    "react": [
-      "react"
-    ],
-    "javascript": [
-      "react"
-    ],
-    "frontend": [
-      "react"
-    ],
-    "components": [
-      "react"
-    ],
-    "hooks": [
-      "react"
-    ],
-    "managed-services-best-practices": [
-      "managed-services-best-practices"
-    ],
-    "pull-request": [
-      "pull-request"
+    "runway": [
+      "runway"
     ],
     "ruby": [
       "ruby"
+    ],
+    "development": [
+      "ruby",
+      "python"
     ],
     "style": [
       "ruby"
     ],
     "conventions": [
       "ruby"
+    ],
+    "python": [
+      "python"
+    ],
+    "standards": [
+      "python"
+    ],
+    "threading": [
+      "python"
+    ],
+    "argparse": [
+      "python"
     ],
     "monitoring": [
       "aws"
@@ -507,11 +504,14 @@
     "alarms": [
       "aws"
     ],
-    "runway": [
-      "runway"
+    "pre-release-security-checklist": [
+      "pre-release-security-checklist"
     ],
-    "external-code-review-checklist": [
-      "external-code-review-checklist"
+    "managed-services-best-practices": [
+      "managed-services-best-practices"
+    ],
+    "aws-wafr-checklist": [
+      "aws-wafr-checklist"
     ]
   }
 }
